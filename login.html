@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đăng nhập hoặc đăng ký tài khoản Justplay Sportswear để theo dõi đơn hàng và nhận ưu đãi độc quyền.">
+
+    <title>Đăng nhập | Justplay Sportswear</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+
+    <!-- Header đơn giản -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Justplay Sportswear — Trang chủ">
+                    <img src="images/logo_brand.png" alt="Justplay" class="logo-img">
+                </a>
+                <a href="index.html" class="btn btn--ghost" style="color:rgba(255,255,255,0.7);border-bottom-color:rgba(255,255,255,0.3)">
+                    <i data-lucide="arrow-left" aria-hidden="true"></i> Quay lại cửa hàng
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="auth-page">
+        <div class="auth-container">
+
+            <h1 class="auth-title">Chào mừng trở lại</h1>
+
+            <!-- Tab Toggle: Đăng nhập / Đăng ký -->
+            <div class="auth-tabs" role="tablist" aria-label="Chọn Đăng nhập hoặc Đăng ký">
+                <button
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="login-panel"
+                    id="login-tab"
+                    class="auth-tab active"
+                >Đăng nhập</button>
+                <button
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="register-panel"
+                    id="register-tab"
+                    class="auth-tab"
+                >Đăng ký</button>
+            </div>
+
+            <!-- ==============================
+                 FORM ĐĂNG NHẬP
+            ============================== -->
+            <div id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                <form class="auth-form" action="#" method="post" novalidate>
+
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input
+                            id="login-email"
+                            name="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Mật khẩu</label>
+                        <div class="input-with-icon">
+                            <input
+                                id="login-password"
+                                name="password"
+                                type="password"
+                                placeholder="••••••••"
+                                required
+                                autocomplete="current-password"
+                            >
+                            <button type="button" class="toggle-password" aria-label="Hiện mật khẩu"><i data-lucide="eye" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span>Ghi nhớ đăng nhập</span>
+                        </label>
+                        <a href="#" class="forgot-password-link">Quên mật khẩu?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full">Đăng nhập</button>
+
+                    <div class="auth-divider">
+                        <span>hoặc</span>
+                    </div>
+
+                    <button type="button" class="btn btn--social btn--google">
+                        Đăng nhập với Google
+                    </button>
+                    <button type="button" class="btn btn--social btn--facebook">
+                        Đăng nhập với Facebook
+                    </button>
+
+                </form>
+            </div>
+
+            <!-- ==============================
+                 FORM ĐĂNG KÝ
+            ============================== -->
+            <div id="register-panel" role="tabpanel" aria-labelledby="register-tab" hidden>
+                <form class="auth-form" action="#" method="post" novalidate>
+
+                    <div class="form-group">
+                        <label for="register-name">Họ và tên</label>
+                        <input
+                            id="register-name"
+                            name="name"
+                            type="text"
+                            placeholder="Nguyễn Văn A"
+                            required
+                            autocomplete="name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input
+                            id="register-email"
+                            name="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-phone">Số điện thoại</label>
+                        <input
+                            id="register-phone"
+                            name="phone"
+                            type="tel"
+                            placeholder="0912 345 678"
+                            autocomplete="tel"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-password">Mật khẩu</label>
+                        <div class="input-with-icon">
+                            <input
+                                id="register-password"
+                                name="password"
+                                type="password"
+                                placeholder="Tối thiểu 8 ký tự"
+                                required
+                                minlength="8"
+                                autocomplete="new-password"
+                            >
+                            <button type="button" class="toggle-password" aria-label="Hiện mật khẩu"><i data-lucide="eye" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-confirm">Xác nhận mật khẩu</label>
+                        <input
+                            id="register-confirm"
+                            name="password_confirm"
+                            type="password"
+                            placeholder="Nhập lại mật khẩu"
+                            required
+                            autocomplete="new-password"
+                        >
+                    </div>
+
+                    <label class="checkbox-label" style="margin-bottom:var(--space-lg)">
+                        <input type="checkbox" name="agree_terms" required>
+                        <span>Tôi đồng ý với <a href="#" style="color:var(--color-primary);text-decoration:underline">điều khoản sử dụng</a></span>
+                    </label>
+
+                    <button type="submit" class="btn btn--primary btn--full">Tạo tài khoản</button>
+
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer đơn giản -->
+    <footer class="site-footer" style="padding-block:var(--space-lg)">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:none">
+                <p>&copy; 2026 Justplay Sportswear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

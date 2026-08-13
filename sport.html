@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pickleball — Trang phục thể thao cao cấp cho người chơi Pickleball. Khám phá bộ sưu tập áo, quần chuyên dụng tại Justplay Sportswear.">
+
+    <title>Pickleball | Justplay Sportswear</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" role="banner">
+        <div class="container">
+            <p>SALE PICKLEBALL — GIẢM 30% BỘ SƯU TẬP MỚI NHẤT</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Justplay Sportswear — Trang chủ">
+                    <img src="images/logo_brand.png" alt="Justplay" class="logo-img">
+                </a>
+                <nav class="main-nav" aria-label="Điều hướng chính">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="products.html?category=nam" class="nav-link">Nam</a></li>
+                        <li class="nav-item"><a href="products.html?category=nu" class="nav-link">Nữ</a></li>
+                        <li class="nav-item nav-item--dropdown">
+                            <a href="#" class="nav-link active" aria-expanded="false" aria-haspopup="true">
+                                Thể Thao <span class="nav-arrow" aria-hidden="true"><i data-lucide="chevron-down"></i></span>
+                            </a>
+                            <div class="mega-menu" role="menu">
+                                <ul class="mega-menu-list">
+                                    <li><a href="sport.html?sport=gym" role="menuitem">Gym & Fitness</a></li>
+                                    <li><a href="sport.html?sport=chay-bo" role="menuitem">Chạy bộ</a></li>
+                                    <li><a href="sport.html?sport=bong-da" role="menuitem">Bóng đá</a></li>
+                                    <li><a href="sport.html?sport=bong-ro" role="menuitem">Bóng rổ</a></li>
+                                    <li><a href="sport.html?sport=yoga" role="menuitem">Yoga</a></li>
+                                    <li><a href="sport.html?sport=pickleball" role="menuitem">Pickleball</a></li>
+                                    <li><a href="sport.html?sport=cau-long" role="menuitem">Cầu lông</a></li>
+                                    <li><a href="sport.html?sport=tennis" role="menuitem">Tennis</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="products.html?sale=true" class="nav-link nav-link--sale">Giảm giá</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <form class="search-form" action="products.html" method="get" role="search">
+                        <label for="header-search" class="sr-only">Tìm kiếm sản phẩm</label>
+                        <input id="header-search" name="q" type="search" placeholder="Tìm kiếm..." class="search-input" autocomplete="off">
+                        <button type="submit" class="search-btn" aria-label="Tìm kiếm"><i data-lucide="search" aria-hidden="true"></i></button>
+                    </form>
+                    <a href="login.html" class="header-icon" aria-label="Tài khoản"><i data-lucide="user" aria-hidden="true"></i></a>
+                    <a href="cart.html" class="header-icon cart-icon" aria-label="Giỏ hàng">
+                        <i data-lucide="shopping-cart" aria-hidden="true"></i> <span class="cart-count" aria-live="polite">0</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="mobile-nav" aria-label="Menu di động" hidden>
+            <button class="mobile-nav-close" aria-label="Đóng menu"><i data-lucide="x" aria-hidden="true"></i></button>
+            <ul class="mobile-nav-list">
+                <li><a href="products.html?category=nam">Nam</a></li>
+                <li><a href="products.html?category=nu">Nữ</a></li>
+                <li>
+                    <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">Thể Thao ▾</button>
+                    <ul class="mobile-dropdown" hidden>
+                        <li><a href="sport.html?sport=gym">Gym & Fitness</a></li>
+                        <li><a href="sport.html?sport=chay-bo">Chạy bộ</a></li>
+                        <li><a href="sport.html?sport=pickleball">Pickleball</a></li>
+                    </ul>
+                </li>
+                <li><a href="products.html?sale=true" class="nav-link--sale">Giảm giá</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- ==============================
+             SPORT HERO
+        ============================== -->
+        <section class="sport-hero" aria-label="Pickleball hero banner">
+            <div class="container">
+                <div class="sport-hero-content">
+                    <h1 class="sport-hero-title">Pickleball</h1>
+                    <p class="sport-hero-description">
+                        Trang bị sẵn sàng cho sân đấu. Thời trang thể thao cao cấp
+                        dành cho người chơi Pickleball ở mọi trình độ.
+                    </p>
+                    <a href="products.html?sport=pickleball" class="btn btn--primary">Mua sắm Pickleball</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================
+             VỀ BỘ MÔN
+        ============================== -->
+        <section class="sport-about" aria-labelledby="sport-about-heading">
+            <div class="container">
+                <h2 id="sport-about-heading" class="section-title">Về Pickleball</h2>
+                <p class="sport-about-text">
+                    Pickleball là bộ môn thể thao đang phát triển nhanh nhất tại Việt Nam.
+                    Kết hợp giữa tennis, bóng bàn và cầu lông, Pickleball phù hợp cho mọi
+                    lứa tuổi và trình độ. Khám phá bộ sưu tập trang phục chuyên dụng,
+                    được thiết kế tối ưu cho chuyển động linh hoạt trên sân đấu.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==============================
+             SẢN PHẨM NỔI BẬT
+        ============================== -->
+        <section class="sport-products" aria-labelledby="sport-products-heading">
+            <div class="container">
+                <h2 id="sport-products-heading" class="section-title">Sản phẩm nổi bật cho Pickleball</h2>
+                <div class="product-grid">
+
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <span class="badge badge--new">Mới</span>
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=Áo+Pickleball+1" alt="Áo Pickleball nam" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Áo Pickleball nam</h3>
+                                <p class="product-category">Pickleball</p>
+                                <div class="product-price"><span class="price-current">459.000₫</span></div>
+                                <div class="product-colors">
+                                    <span class="color-swatch" style="background:#D42027" title="Đỏ"></span>
+                                    <span class="color-swatch color-swatch--bordered" style="background:#fff" title="Trắng"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <span class="badge badge--sale">-30%</span>
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=Áo+Pickleball+2" alt="Áo Pickleball nữ" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Áo Pickleball nữ</h3>
+                                <p class="product-category">Pickleball</p>
+                                <div class="product-price">
+                                    <span class="price-current price-current--sale">315.000₫</span>
+                                    <span class="price-original">449.000₫</span>
+                                </div>
+                                <div class="product-colors">
+                                    <span class="color-swatch" style="background:#1a4d8f" title="Xanh navy"></span>
+                                    <span class="color-swatch" style="background:#111" title="Đen"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <span class="badge badge--bestseller">Bán chạy</span>
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=Quần+Pickleball" alt="Quần Pickleball nam" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Quần Pickleball nam</h3>
+                                <p class="product-category">Pickleball</p>
+                                <div class="product-price"><span class="price-current">399.000₫</span></div>
+                                <div class="product-colors">
+                                    <span class="color-swatch" style="background:#111" title="Đen"></span>
+                                    <span class="color-swatch" style="background:#888" title="Xám"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=Bộ+Pickleball" alt="Bộ Pickleball nữ" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Bộ Pickleball nữ</h3>
+                                <p class="product-category">Pickleball</p>
+                                <div class="product-price"><span class="price-current">799.000₫</span></div>
+                                <div class="product-colors">
+                                    <span class="color-swatch" style="background:#D42027" title="Đỏ"></span>
+                                    <span class="color-swatch color-swatch--bordered" style="background:#fff" title="Trắng"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+                <div class="section-footer">
+                    <a href="products.html?sport=pickleball" class="btn btn--outline">Xem tất cả →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================
+             PROMOTION
+        ============================== -->
+        <section class="sport-promo" aria-labelledby="sport-promo-heading">
+            <div class="container" style="text-align:center">
+                <h2 id="sport-promo-heading" class="promotion-title">Sale Pickleball — Giảm 30%</h2>
+                <p class="promotion-subtitle">Ưu đãi có hạn cho bộ sưu tập Pickleball mùa mới</p>
+                <a href="products.html?sport=pickleball&sale=true" class="btn btn--primary">Mua ngay</a>
+            </div>
+        </section>
+
+        <!-- ==============================
+             CÁC BỘ MÔN KHÁC
+        ============================== -->
+        <section class="other-sports" aria-labelledby="other-sports-heading">
+            <div class="container">
+                <h2 id="other-sports-heading" class="section-title">Các bộ môn khác</h2>
+                <div class="categories-grid">
+
+                    <a href="sport.html?sport=gym" class="category-card">
+                        <img src="https://placehold.co/300x400/2d2d2d/FFFFFF?text=Gym" alt="Gym & Fitness" loading="lazy">
+                        <span class="category-label">Gym & Fitness</span>
+                    </a>
+
+                    <a href="sport.html?sport=chay-bo" class="category-card">
+                        <img src="https://placehold.co/300x400/1a1a1a/FFFFFF?text=Chạy+bộ" alt="Chạy bộ" loading="lazy">
+                        <span class="category-label">Chạy bộ</span>
+                    </a>
+
+                    <a href="sport.html?sport=bong-da" class="category-card">
+                        <img src="https://placehold.co/300x400/3a1a1a/FFFFFF?text=Bóng+đá" alt="Bóng đá" loading="lazy">
+                        <span class="category-label">Bóng đá</span>
+                    </a>
+
+                    <a href="sport.html?sport=yoga" class="category-card">
+                        <img src="https://placehold.co/300x400/1a2a2a/FFFFFF?text=Yoga" alt="Yoga" loading="lazy">
+                        <span class="category-label">Yoga</span>
+                    </a>
+
+                    <a href="sport.html?sport=tennis" class="category-card">
+                        <img src="https://placehold.co/300x400/1a1a2a/FFFFFF?text=Tennis" alt="Tennis" loading="lazy">
+                        <span class="category-label">Tennis</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-heading">Về chúng tôi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Hỗ trợ khách hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Đổi trả hàng</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Cửa hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=nam">Nam</a></li>
+                        <li><a href="products.html?category=nu">Nữ</a></li>
+                        <li><a href="products.html?sale=true">Giảm giá</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Theo dõi chúng tôi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Justplay Sportswear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

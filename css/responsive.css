@@ -1,0 +1,277 @@
+/* ============================================================
+   responsive.css — Breakpoints & Responsive Overrides
+   Justplay Sportswear E-commerce
+
+   Breakpoints:
+   - xs:  < 480px   (mobile nhỏ)
+   - sm:  < 768px   (mobile)
+   - md:  < 1024px  (tablet)
+   - lg:  < 1200px  (laptop)
+   ============================================================ */
+
+/* ==========================================
+   TABLET — 1024px trở xuống
+========================================== */
+@media (max-width: 1024px) {
+    /* Typography */
+    :root {
+        --font-size-display: 44px;
+        --font-size-h1: 40px;
+        --font-size-h2: 30px;
+    }
+
+    /* Product grids */
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .usp-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Product detail */
+    .product-detail {
+        gap: var(--space-xl);
+    }
+
+    /* Cart layout */
+    .cart-layout {
+        grid-template-columns: 1fr 320px;
+    }
+
+    /* Newsletter */
+    .newsletter-form {
+        max-width: 400px;
+    }
+}
+
+/* ==========================================
+   MOBILE — 768px trở xuống
+========================================== */
+@media (max-width: 768px) {
+    /* Typography */
+    :root {
+        --font-size-display: 36px;
+        --font-size-h1: 32px;
+        --font-size-h2: 26px;
+        --font-size-h3: 22px;
+    }
+
+    /* Sections spacing */
+    section {
+        padding-block: var(--space-2xl);
+    }
+
+    /* Header */
+    .main-nav,
+    .search-form {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero {
+        padding-block: var(--space-2xl);
+    }
+
+    .hero-image {
+        order: -1;
+        max-height: 340px;
+        overflow: hidden;
+        border-radius: var(--radius-md);
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    /* Categories */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Products */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .product-grid--3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* USP */
+    .usp-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    /* Newsletter */
+    .newsletter-form {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .newsletter-input {
+        border-right: 2px solid var(--color-border);
+        border-radius: var(--radius-sm);
+        width: 100%;
+    }
+
+    .newsletter-btn {
+        border-radius: var(--radius-sm);
+        width: 100%;
+    }
+
+    /* Product listing */
+    .product-listing-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-sidebar {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        border-radius: 0;
+        overflow-y: auto;
+        top: 0;
+    }
+
+    .filters-sidebar.open {
+        display: block;
+    }
+
+    .filter-toggle-btn {
+        display: flex;
+    }
+
+    /* Product detail */
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .product-gallery-thumbnails {
+        gap: var(--space-xs);
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 75px;
+    }
+
+    .product-detail-name {
+        font-size: var(--font-size-h3);
+    }
+
+    /* Cart */
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        position: static;
+        order: -1;
+        margin-bottom: var(--space-lg);
+    }
+
+    /* Auth */
+    .auth-page {
+        align-items: flex-start;
+        padding-top: var(--space-xl);
+    }
+}
+
+/* ==========================================
+   MOBILE NHỎ — 480px trở xuống
+========================================== */
+@media (max-width: 480px) {
+    :root {
+        --font-size-display: 30px;
+        --font-size-h2: 22px;
+    }
+
+    /* 1 cột */
+    .product-grid,
+    .product-grid--3col {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .usp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hero buttons stack */
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Cart item */
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+    .cart-item-image {
+        width: 90px;
+        height: 112px;
+    }
+
+    /* Product actions */
+    .product-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* ==========================================
+   PRINT
+========================================== */
+@media print {
+    .site-header,
+    .announcement-bar,
+    .mobile-nav,
+    .filters-sidebar,
+    .newsletter,
+    .site-footer {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+    }
+}

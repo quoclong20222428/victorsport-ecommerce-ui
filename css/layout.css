@@ -1,0 +1,129 @@
+/* ============================================================
+   layout.css — Container, Grid Systems, Section Spacing
+   Justplay Sportswear E-commerce
+   ============================================================ */
+
+/* ==========================================
+   CONTAINER
+========================================== */
+.container {
+    width: min(100% - var(--container-padding) * 2, var(--container-max));
+    margin-inline: auto;
+}
+
+/* ==========================================
+   SECTION SPACING
+========================================== */
+section {
+    padding-block: var(--space-3xl);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.section-title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+}
+
+.section-description {
+    font-size: var(--font-size-body-lg);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+/* ==========================================
+   PRODUCT GRID
+========================================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.product-grid--3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ==========================================
+   CATEGORIES GRID
+========================================== */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-lg);
+}
+
+/* ==========================================
+   USP GRID
+========================================== */
+.usp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+/* ==========================================
+   FOOTER GRID
+========================================== */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+}
+
+/* ==========================================
+   PRODUCT LISTING LAYOUT (sidebar + grid)
+========================================== */
+.product-listing-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+/* ==========================================
+   PRODUCT DETAIL LAYOUT
+========================================== */
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+/* ==========================================
+   CART LAYOUT
+========================================== */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+/* ==========================================
+   AUTH LAYOUT (Login/Register)
+========================================== */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--header-height) - var(--announcement-height));
+    padding: var(--space-2xl) var(--container-padding);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 440px;
+}

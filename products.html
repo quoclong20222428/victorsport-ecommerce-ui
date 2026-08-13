@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Danh sách sản phẩm thể thao Justplay — Áo, quần, giày thể thao cho nam và nữ. Lọc theo môn thể thao, size, màu sắc và giá.">
+
+    <title>Sản phẩm | Justplay Sportswear</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" role="banner">
+        <div class="container">
+            <p>MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 500.000₫</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Justplay Sportswear — Trang chủ">
+                    <img src="images/logo_brand.png" alt="Justplay" class="logo-img">
+                </a>
+                <nav class="main-nav" aria-label="Điều hướng chính">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="products.html?category=nam" class="nav-link active">Nam</a></li>
+                        <li class="nav-item"><a href="products.html?category=nu" class="nav-link">Nữ</a></li>
+                        <li class="nav-item nav-item--dropdown">
+                            <a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">
+                                Thể Thao <span class="nav-arrow" aria-hidden="true"><i data-lucide="chevron-down"></i></span>
+                            </a>
+                            <div class="mega-menu" role="menu">
+                                <ul class="mega-menu-list">
+                                    <li><a href="sport.html?sport=gym" role="menuitem">Gym & Fitness</a></li>
+                                    <li><a href="sport.html?sport=chay-bo" role="menuitem">Chạy bộ</a></li>
+                                    <li><a href="sport.html?sport=bong-da" role="menuitem">Bóng đá</a></li>
+                                    <li><a href="sport.html?sport=bong-ro" role="menuitem">Bóng rổ</a></li>
+                                    <li><a href="sport.html?sport=yoga" role="menuitem">Yoga</a></li>
+                                    <li><a href="sport.html?sport=pickleball" role="menuitem">Pickleball</a></li>
+                                    <li><a href="sport.html?sport=cau-long" role="menuitem">Cầu lông</a></li>
+                                    <li><a href="sport.html?sport=tennis" role="menuitem">Tennis</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="products.html?sale=true" class="nav-link nav-link--sale">Giảm giá</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <form class="search-form" action="products.html" method="get" role="search">
+                        <label for="header-search" class="sr-only">Tìm kiếm sản phẩm</label>
+                        <input id="header-search" name="q" type="search" placeholder="Tìm kiếm..." class="search-input" autocomplete="off">
+                        <button type="submit" class="search-btn" aria-label="Tìm kiếm"><i data-lucide="search" aria-hidden="true"></i></button>
+                    </form>
+                    <a href="login.html" class="header-icon" aria-label="Tài khoản"><i data-lucide="user" aria-hidden="true"></i></a>
+                    <a href="cart.html" class="header-icon cart-icon" aria-label="Giỏ hàng">
+                        <i data-lucide="shopping-cart" aria-hidden="true"></i>
+                        <span class="cart-count" aria-live="polite">0</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="mobile-nav" aria-label="Menu di động" hidden>
+            <button class="mobile-nav-close" aria-label="Đóng menu"><i data-lucide="x" aria-hidden="true"></i></button>
+            <ul class="mobile-nav-list">
+                <li><a href="products.html?category=nam">Nam</a></li>
+                <li><a href="products.html?category=nu">Nữ</a></li>
+                <li>
+                    <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">Thể Thao <i data-lucide="chevron-down" aria-hidden="true"></i></button>
+                    <ul class="mobile-dropdown" hidden>
+                        <li><a href="sport.html?sport=gym">Gym & Fitness</a></li>
+                        <li><a href="sport.html?sport=chay-bo">Chạy bộ</a></li>
+                        <li><a href="sport.html?sport=bong-da">Bóng đá</a></li>
+                        <li><a href="sport.html?sport=yoga">Yoga</a></li>
+                        <li><a href="sport.html?sport=pickleball">Pickleball</a></li>
+                    </ul>
+                </li>
+                <li><a href="products.html?sale=true" class="nav-link--sale">Giảm giá</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html?category=nam">Nam</a></li>
+                    <li aria-current="page">Áo thể thao</li>
+                </ol>
+            </nav>
+
+            <div class="product-listing-layout">
+
+                <!-- ==============================
+                     SIDEBAR BỘ LỌC
+                ============================== -->
+                <aside class="filters-sidebar" aria-label="Bộ lọc sản phẩm">
+                    <div class="filters-header">
+                        <h2 class="filters-title">Bộ lọc</h2>
+                        <button type="button" class="filters-clear">Xóa tất cả</button>
+                    </div>
+
+                    <!-- Lọc theo danh mục -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Danh mục</h3>
+                        <ul class="filter-options">
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="category" value="nam" checked>
+                                    <span>Nam</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="category" value="nu">
+                                    <span>Nữ</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="category" value="phu-kien">
+                                    <span>Phụ kiện</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Lọc theo bộ môn -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Bộ môn</h3>
+                        <ul class="filter-options">
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="sport" value="gym">
+                                    <span>Gym & Fitness</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="sport" value="chay-bo">
+                                    <span>Chạy bộ</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="sport" value="bong-da">
+                                    <span>Bóng đá</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="sport" value="yoga">
+                                    <span>Yoga</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="sport" value="pickleball">
+                                    <span>Pickleball</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-checkbox">
+                                    <input type="checkbox" name="sport" value="cau-long">
+                                    <span>Cầu lông</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Lọc theo size -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Size</h3>
+                        <div class="filter-sizes">
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="S">
+                                <span>S</span>
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="M">
+                                <span>M</span>
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="L">
+                                <span>L</span>
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="XL">
+                                <span>XL</span>
+                            </label>
+                            <label class="size-option">
+                                <input type="checkbox" name="size" value="XXL">
+                                <span>XXL</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Lọc theo giá -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Khoảng giá</h3>
+                        <ul class="filter-options">
+                            <li>
+                                <label class="filter-radio">
+                                    <input type="radio" name="price" value="0-300000">
+                                    <span>Dưới 300.000₫</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-radio">
+                                    <input type="radio" name="price" value="300000-500000">
+                                    <span>300.000₫ – 500.000₫</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-radio">
+                                    <input type="radio" name="price" value="500000-1000000">
+                                    <span>500.000₫ – 1.000.000₫</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="filter-radio">
+                                    <input type="radio" name="price" value="1000000+">
+                                    <span>Trên 1.000.000₫</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Lọc theo màu sắc -->
+                    <div class="filter-group">
+                        <h3 class="filter-group-title">Màu sắc</h3>
+                        <div class="filter-colors">
+                            <label class="filter-color-option" title="Đen">
+                                <input type="checkbox" name="color" value="den">
+                                <span class="color-swatch" style="background:#111" title="Đen"></span>
+                            </label>
+                            <label class="filter-color-option" title="Trắng">
+                                <input type="checkbox" name="color" value="trang">
+                                <span class="color-swatch color-swatch--bordered" style="background:#fff" title="Trắng"></span>
+                            </label>
+                            <label class="filter-color-option" title="Đỏ">
+                                <input type="checkbox" name="color" value="do">
+                                <span class="color-swatch" style="background:#D42027" title="Đỏ"></span>
+                            </label>
+                            <label class="filter-color-option" title="Xám">
+                                <input type="checkbox" name="color" value="xam">
+                                <span class="color-swatch" style="background:#888" title="Xám"></span>
+                            </label>
+                            <label class="filter-color-option" title="Xanh navy">
+                                <input type="checkbox" name="color" value="navy">
+                                <span class="color-swatch" style="background:#1a4d8f" title="Xanh navy"></span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- ==============================
+                     DANH SÁCH SẢN PHẨM
+                ============================== -->
+                <div class="product-listing">
+                    <div class="listing-header">
+                        <h1 class="listing-title">Áo thể thao nam</h1>
+                        <div class="listing-toolbar">
+                            <span class="listing-count">Hiển thị 24 sản phẩm</span>
+                            <div class="listing-sort">
+                                <label for="sort-select" class="sr-only">Sắp xếp theo</label>
+                                <select id="sort-select" class="sort-select">
+                                    <option value="newest">Mới nhất</option>
+                                    <option value="price-low">Giá: Thấp → Cao</option>
+                                    <option value="price-high">Giá: Cao → Thấp</option>
+                                    <option value="bestseller">Bán chạy nhất</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Filter Toggle -->
+                        <button type="button" class="filter-toggle-btn" id="filter-toggle-btn" aria-expanded="false">
+                            <i data-lucide="sliders-horizontal" aria-hidden="true"></i> Bộ lọc
+                        </button>
+                    </div>
+
+                    <div class="product-grid product-grid--3col">
+
+                        <!-- SP 1 -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <span class="badge badge--new">Mới</span>
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+1" alt="Áo chạy bộ nam" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Áo chạy bộ nam</h3>
+                                    <p class="product-category">Chạy bộ</p>
+                                    <div class="product-price"><span class="price-current">599.000₫</span></div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#111" title="Đen"></span>
+                                        <span class="color-swatch" style="background:#D42027" title="Đỏ"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 2 (Sale) -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <span class="badge badge--sale">-25%</span>
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+2" alt="Quần tập gym nam" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Quần tập gym</h3>
+                                    <p class="product-category">Gym & Fitness</p>
+                                    <div class="product-price">
+                                        <span class="price-current price-current--sale">399.000₫</span>
+                                        <span class="price-original">529.000₫</span>
+                                    </div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#666" title="Xám"></span>
+                                        <span class="color-swatch" style="background:#111" title="Đen"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 3 -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <span class="badge badge--bestseller">Bán chạy</span>
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+3" alt="Áo bóng đá nam" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Áo bóng đá</h3>
+                                    <p class="product-category">Bóng đá</p>
+                                    <div class="product-price"><span class="price-current">699.000₫</span></div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#D42027" title="Đỏ"></span>
+                                        <span class="color-swatch color-swatch--bordered" style="background:#fff" title="Trắng"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 4 -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+4" alt="Áo khoác thể thao nam" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Áo khoác thể thao</h3>
+                                    <p class="product-category">Gym & Fitness</p>
+                                    <div class="product-price"><span class="price-current">899.000₫</span></div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#111" title="Đen"></span>
+                                        <span class="color-swatch" style="background:#1a4d8f" title="Xanh navy"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 5 -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <span class="badge badge--sale">-30%</span>
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+5" alt="Quần chạy bộ nam" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Quần chạy bộ</h3>
+                                    <p class="product-category">Chạy bộ</p>
+                                    <div class="product-price">
+                                        <span class="price-current price-current--sale">349.000₫</span>
+                                        <span class="price-original">499.000₫</span>
+                                    </div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#111" title="Đen"></span>
+                                        <span class="color-swatch" style="background:#555" title="Xám đậm"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 6 -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+6" alt="Áo thể thao pickleball" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Áo thể thao Pickleball</h3>
+                                    <p class="product-category">Pickleball</p>
+                                    <div class="product-price"><span class="price-current">459.000₫</span></div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#D42027" title="Đỏ"></span>
+                                        <span class="color-swatch color-swatch--bordered" style="background:#fff" title="Trắng"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 7 -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <span class="badge badge--new">Mới</span>
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+7" alt="Áo polo thể thao" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Áo polo thể thao</h3>
+                                    <p class="product-category">Tennis</p>
+                                    <div class="product-price"><span class="price-current">549.000₫</span></div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch color-swatch--bordered" style="background:#fff" title="Trắng"></span>
+                                        <span class="color-swatch" style="background:#1a4d8f" title="Xanh navy"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 8 -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+8" alt="Bộ tập thể thao nam" loading="lazy">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Bộ tập thể thao nam</h3>
+                                    <p class="product-category">Gym & Fitness</p>
+                                    <div class="product-price"><span class="price-current">1.199.000₫</span></div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#111" title="Đen"></span>
+                                        <span class="color-swatch" style="background:#D42027" title="Đỏ"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- SP 9 (Hết hàng) -->
+                        <article class="product-card">
+                            <a href="product-detail.html" class="product-card-link">
+                                <div class="product-card-image">
+                                    <span class="badge badge--outofstock">Hết hàng</span>
+                                    <img src="https://placehold.co/300x375/CCCCCC/666666?text=Hết+hàng" alt="Áo cầu lông" loading="lazy" style="filter:grayscale(1)">
+                                    <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="product-card-info">
+                                    <h3 class="product-name">Áo cầu lông</h3>
+                                    <p class="product-category">Cầu lông</p>
+                                    <div class="product-price"><span class="price-current">379.000₫</span></div>
+                                    <div class="product-colors">
+                                        <span class="color-swatch" style="background:#1a4d8f" title="Xanh navy"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                    </div>
+
+                    <!-- Phân trang -->
+                    <nav class="pagination" aria-label="Phân trang">
+                        <ul class="pagination-list">
+                            <li><a href="?page=1" class="pagination-link pagination-link--active" aria-current="page">1</a></li>
+                            <li><a href="?page=2" class="pagination-link">2</a></li>
+                            <li><a href="?page=3" class="pagination-link">3</a></li>
+                            <li><a href="?page=2" class="pagination-link pagination-link--next" aria-label="Trang tiếp theo">→</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-heading">Về chúng tôi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Hỗ trợ khách hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Đổi trả hàng</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Cửa hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=nam">Nam</a></li>
+                        <li><a href="products.html?category=nu">Nữ</a></li>
+                        <li><a href="products.html">Thể thao</a></li>
+                        <li><a href="products.html?sale=true">Giảm giá</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Theo dõi chúng tôi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" aria-label="Facebook Justplay">Facebook</a></li>
+                        <li><a href="#" aria-label="Instagram Justplay">Instagram</a></li>
+                        <li><a href="#" aria-label="TikTok Justplay">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Justplay Sportswear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

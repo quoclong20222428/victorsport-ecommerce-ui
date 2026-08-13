@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Áo chạy bộ nam Justplay — Chất liệu thoáng khí, co giãn 4 chiều, thiết kế ergonomic. Mua ngay với giá 599.000₫.">
+
+    <title>Áo chạy bộ nam | Justplay Sportswear</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" role="banner">
+        <div class="container">
+            <p>MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 500.000₫</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo" aria-label="Justplay Sportswear — Trang chủ">
+                    <img src="images/logo_brand.png" alt="Justplay" class="logo-img">
+                </a>
+                <nav class="main-nav" aria-label="Điều hướng chính">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="products.html?category=nam" class="nav-link">Nam</a></li>
+                        <li class="nav-item"><a href="products.html?category=nu" class="nav-link">Nữ</a></li>
+                        <li class="nav-item nav-item--dropdown">
+                            <a href="#" class="nav-link" aria-expanded="false" aria-haspopup="true">
+                                      Thể Thao <span class="nav-arrow" aria-hidden="true"><i data-lucide="chevron-down"></i></span>
+                            </a>
+                            <div class="mega-menu" role="menu">
+                                <ul class="mega-menu-list">
+                                    <li><a href="sport.html?sport=gym" role="menuitem">Gym & Fitness</a></li>
+                                    <li><a href="sport.html?sport=chay-bo" role="menuitem">Chạy bộ</a></li>
+                                    <li><a href="sport.html?sport=bong-da" role="menuitem">Bóng đá</a></li>
+                                    <li><a href="sport.html?sport=yoga" role="menuitem">Yoga</a></li>
+                                    <li><a href="sport.html?sport=pickleball" role="menuitem">Pickleball</a></li>
+                                    <li><a href="sport.html?sport=cau-long" role="menuitem">Cầu lông</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="products.html?sale=true" class="nav-link nav-link--sale">Giảm giá</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <form class="search-form" action="products.html" method="get" role="search">
+                        <label for="header-search" class="sr-only">Tìm kiếm sản phẩm</label>
+                        <input id="header-search" name="q" type="search" placeholder="Tìm kiếm..." class="search-input" autocomplete="off">
+                        <button type="submit" class="search-btn" aria-label="Tìm kiếm"><i data-lucide="search" aria-hidden="true"></i></button>
+                    </form>
+                    <a href="login.html" class="header-icon" aria-label="Tài khoản"><i data-lucide="user" aria-hidden="true"></i></a>
+                    <a href="cart.html" class="header-icon cart-icon" aria-label="Giỏ hàng">
+                        <i data-lucide="shopping-cart" aria-hidden="true"></i> <span class="cart-count" aria-live="polite">0</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <nav id="mobile-menu" class="mobile-nav" aria-label="Menu di động" hidden>
+            <button class="mobile-nav-close" aria-label="Đóng menu"><i data-lucide="x" aria-hidden="true"></i></button>
+            <ul class="mobile-nav-list">
+                <li><a href="products.html?category=nam">Nam</a></li>
+                <li><a href="products.html?category=nu">Nữ</a></li>
+                <li>
+                    <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">Thể Thao ▾</button>
+                    <ul class="mobile-dropdown" hidden>
+                        <li><a href="sport.html?sport=gym">Gym & Fitness</a></li>
+                        <li><a href="sport.html?sport=chay-bo">Chạy bộ</a></li>
+                    </ul>
+                </li>
+                <li><a href="products.html?sale=true" class="nav-link--sale">Giảm giá</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html?category=nam">Nam</a></li>
+                    <li><a href="products.html?category=nam&type=ao">Áo thể thao</a></li>
+                    <li aria-current="page">Áo chạy bộ nam</li>
+                </ol>
+            </nav>
+
+            <!-- ==============================
+                 PRODUCT DETAIL LAYOUT
+            ============================== -->
+            <div class="product-detail">
+
+                <!-- Thư viện ảnh -->
+                <div class="product-gallery">
+                    <div class="product-gallery-main">
+                        <img
+                            src="https://placehold.co/600x750/EEEEEE/333333?text=Áo+chạy+bộ+nam"
+                            alt="Áo chạy bộ nam màu đen — mặt trước"
+                            id="main-product-image"
+                            width="600"
+                            height="750"
+                            fetchpriority="high"
+                        >
+                    </div>
+                    <div class="product-gallery-thumbnails">
+                        <button type="button" class="thumbnail active" aria-label="Xem ảnh mặt trước">
+                            <img src="https://placehold.co/100x125/EEEEEE/333333?text=T1" alt="Mặt trước">
+                        </button>
+                        <button type="button" class="thumbnail" aria-label="Xem ảnh mặt sau">
+                            <img src="https://placehold.co/100x125/EEEEEE/444444?text=T2" alt="Mặt sau">
+                        </button>
+                        <button type="button" class="thumbnail" aria-label="Xem ảnh chi tiết">
+                            <img src="https://placehold.co/100x125/EEEEEE/555555?text=T3" alt="Chi tiết">
+                        </button>
+                        <button type="button" class="thumbnail" aria-label="Xem ảnh người mặc">
+                            <img src="https://placehold.co/100x125/EEEEEE/666666?text=T4" alt="Người mặc">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Thông tin sản phẩm -->
+                <div class="product-info">
+                    <h1 class="product-detail-name">Áo chạy bộ nam</h1>
+
+                    <div class="product-rating">
+                    <span class="star-rating" aria-label="4.2 trên 5 sao" role="img">
+                        <i data-lucide="star" class="star star--filled" aria-hidden="true"></i>
+                        <i data-lucide="star" class="star star--filled" aria-hidden="true"></i>
+                        <i data-lucide="star" class="star star--filled" aria-hidden="true"></i>
+                        <i data-lucide="star" class="star star--filled" aria-hidden="true"></i>
+                        <i data-lucide="star" class="star star--empty" aria-hidden="true"></i>
+                    </span>
+                    <span class="rating-count">(128 đánh giá)</span>
+                </div>
+
+                    <div class="product-detail-price">
+                        <span class="price-current">599.000₫</span>
+                        <!-- Nếu đang sale:
+                        <span class="price-original">799.000₫</span>
+                        <span class="badge badge--sale">-25%</span>
+                        -->
+                    </div>
+
+                    <p class="product-short-description">
+                        Áo thể thao chạy bộ với chất liệu thoáng khí, co giãn 4 chiều,
+                        thiết kế ergonomic giúp tối ưu hiệu suất vận động. Phù hợp cho
+                        chạy bộ, tập gym và các hoạt động thể thao cường độ cao.
+                    </p>
+
+                    <!-- Chọn màu sắc -->
+                    <div class="product-option">
+                        <h2 class="option-label">Màu sắc: <span class="option-value" id="selected-color">Đen</span></h2>
+                        <div class="color-options">
+                            <label class="color-option" title="Đen">
+                                <input type="radio" name="color" value="den" checked onchange="document.getElementById('selected-color').textContent='Đen'">
+                                <span class="color-swatch color-swatch--lg" style="background:#111" title="Đen"></span>
+                            </label>
+                            <label class="color-option" title="Đỏ">
+                                <input type="radio" name="color" value="do" onchange="document.getElementById('selected-color').textContent='Đỏ'">
+                                <span class="color-swatch color-swatch--lg" style="background:#D42027" title="Đỏ"></span>
+                            </label>
+                            <label class="color-option" title="Xanh navy">
+                                <input type="radio" name="color" value="navy" onchange="document.getElementById('selected-color').textContent='Xanh navy'">
+                                <span class="color-swatch color-swatch--lg" style="background:#1a4d8f" title="Xanh navy"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Chọn size -->
+                    <div class="product-option">
+                        <h2 class="option-label">Size</h2>
+                        <div class="size-options">
+                            <label class="size-btn">
+                                <input type="radio" name="size" value="S">
+                                <span>S</span>
+                            </label>
+                            <label class="size-btn">
+                                <input type="radio" name="size" value="M" checked>
+                                <span>M</span>
+                            </label>
+                            <label class="size-btn">
+                                <input type="radio" name="size" value="L">
+                                <span>L</span>
+                            </label>
+                            <label class="size-btn">
+                                <input type="radio" name="size" value="XL">
+                                <span>XL</span>
+                            </label>
+                            <label class="size-btn size-btn--disabled">
+                                <input type="radio" name="size" value="XXL" disabled>
+                                <span>XXL</span>
+                            </label>
+                        </div>
+                        <a href="#" class="size-guide-link">Hướng dẫn chọn size →</a>
+                    </div>
+
+                    <!-- Chọn số lượng -->
+                    <div class="product-option">
+                        <h2 class="option-label">Số lượng</h2>
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn" aria-label="Giảm số lượng">−</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Số lượng">
+                            <button type="button" class="qty-btn" aria-label="Tăng số lượng">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Nút hành động -->
+                    <div class="product-actions">
+                        <button type="button" class="btn btn--primary btn--full" id="add-to-cart-btn">Thêm vào giỏ hàng</button>
+                        <button type="button" class="btn btn--ghost wishlist-btn" style="position:static;opacity:1;min-width:auto"><i data-lucide="heart" aria-hidden="true"></i> Yêu thích</button>
+                    </div>
+
+                    <!-- Trust Signals -->
+                    <div class="product-trust">
+                        <div class="trust-item">
+                            <i data-lucide="truck" aria-hidden="true"></i>
+                            <span>Miễn phí vận chuyển cho đơn trên 500.000₫</span>
+                        </div>
+                        <div class="trust-item">
+                            <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                            <span>Đổi trả miễn phí trong 30 ngày</span>
+                        </div>
+                        <div class="trust-item">
+                            <i data-lucide="badge-check" aria-hidden="true"></i>
+                            <span>Hàng chính hãng, bảo hành 12 tháng</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==============================
+                 TABS: Mô tả / Chất liệu / Đánh giá
+            ============================== -->
+            <div class="product-tabs">
+                <div class="tab-nav" role="tablist" aria-label="Thông tin sản phẩm">
+                    <button
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="tab-description"
+                        id="tab-btn-description"
+                    >Mô tả</button>
+                    <button
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="tab-material"
+                        id="tab-btn-material"
+                    >Chất liệu</button>
+                    <button
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="tab-reviews"
+                        id="tab-btn-reviews"
+                    >Đánh giá (128)</button>
+                </div>
+
+                <div id="tab-description" role="tabpanel" aria-labelledby="tab-btn-description">
+                    <p>Áo chạy bộ nam Justplay được thiết kế để đáp ứng nhu cầu của những vận động viên chuyên nghiệp và nghiệp dư. Với công nghệ vải Dri-Fit thoáng khí, áo giúp hút ẩm và thoát nhiệt nhanh chóng, giữ cho bạn luôn khô ráo và thoải mái trong suốt buổi tập.</p>
+                    <br>
+                    <p>Thiết kế ergonomic theo đường cắt may sát người giúp giảm thiểu sự cọ xát, đồng thời tăng khả năng vận động tự do. Đường may phẳng không gây kích ứng da ngay cả khi chạy dài hơi.</p>
+                </div>
+
+                <div id="tab-material" role="tabpanel" aria-labelledby="tab-btn-material" hidden>
+                    <ul style="padding-left:1.5em;line-height:2">
+                        <li>88% Polyester, 12% Spandex</li>
+                        <li>Công nghệ Dri-Fit — Hút ẩm, thoát nhiệt</li>
+                        <li>Co giãn 4 chiều — Tự do chuyển động</li>
+                        <li>Kháng tia UV UPF 30+</li>
+                        <li>Giặt máy được, không xả vải mềm</li>
+                        <li>Sản xuất tại Việt Nam</li>
+                    </ul>
+                </div>
+
+                <div id="tab-reviews" role="tabpanel" aria-labelledby="tab-btn-reviews" hidden>
+                    <p style="color:var(--color-muted);font-style:italic">128 đánh giá từ khách hàng — Trung bình 4.2/5 sao.</p>
+                    <br>
+                    <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-lg);margin-bottom:var(--space-md)">
+                        <strong>Nguyễn Văn A ⭐⭐⭐⭐⭐</strong>
+                        <p style="margin-top:var(--space-xs);color:var(--color-text-secondary)">Áo chất lượng rất tốt, mặc thoáng mát, đường may đẹp. Sẽ mua thêm!</p>
+                    </div>
+                    <div style="border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-lg)">
+                        <strong>Trần Thị B ⭐⭐⭐⭐☆</strong>
+                        <p style="margin-top:var(--space-xs);color:var(--color-text-secondary)">Màu đẹp, vải nhẹ. Size hơi rộng so với thông thường, nên order size nhỏ hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==============================
+             SẢN PHẨM TƯƠNG TỰ
+        ============================== -->
+        <section class="related-products" aria-labelledby="related-heading">
+            <div class="container">
+                <h2 id="related-heading" class="section-title">Sản phẩm tương tự</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+Liên+quan+1" alt="Áo thể thao liên quan 1" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Áo thể thao co giãn</h3>
+                                <p class="product-category">Gym & Fitness</p>
+                                <div class="product-price"><span class="price-current">549.000₫</span></div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <span class="badge badge--sale">-20%</span>
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+Liên+quan+2" alt="Áo thể thao liên quan 2" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Áo tank top thể thao</h3>
+                                <p class="product-category">Chạy bộ</p>
+                                <div class="product-price">
+                                    <span class="price-current price-current--sale">399.000₫</span>
+                                    <span class="price-original">499.000₫</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+Liên+quan+3" alt="Áo thể thao liên quan 3" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Quần chạy bộ nam</h3>
+                                <p class="product-category">Chạy bộ</p>
+                                <div class="product-price"><span class="price-current">449.000₫</span></div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="product-card">
+                        <a href="product-detail.html" class="product-card-link">
+                            <div class="product-card-image">
+                                <span class="badge badge--new">Mới</span>
+                                <img src="https://placehold.co/300x375/EEEEEE/333333?text=SP+Liên+quan+4" alt="Áo thể thao liên quan 4" loading="lazy">
+                                <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="product-card-info">
+                                <h3 class="product-name">Bộ chạy bộ nam</h3>
+                                <p class="product-category">Chạy bộ</p>
+                                <div class="product-price"><span class="price-current">899.000₫</span></div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-heading">Về chúng tôi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Hỗ trợ khách hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Đổi trả hàng</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Cửa hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=nam">Nam</a></li>
+                        <li><a href="products.html?category=nu">Nữ</a></li>
+                        <li><a href="products.html?sale=true">Giảm giá</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Theo dõi chúng tôi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Justplay Sportswear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
