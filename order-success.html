@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Đặt hàng thành công — Justplay Sportswear. Cảm ơn bạn đã mua hàng!">
+    <title>Đặt hàng thành công | Justplay Sportswear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+.success-page{display:flex;align-items:center;justify-content:center;min-height:60vh;padding:var(--space-3xl) var(--space-lg)}
+.success-card{background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-3xl) var(--space-2xl);max-width:600px;width:100%;text-align:center;box-shadow:var(--shadow-lg)}
+.success-icon{width:72px;height:72px;background:rgba(34,197,94,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-xl)}
+.success-icon .lucide{width:40px;height:40px;color:#16a34a}
+.success-title{font-size:var(--font-size-h2);font-weight:var(--font-weight-bold);margin-bottom:var(--space-sm);color:var(--color-text)}
+.success-sub{font-size:var(--font-size-body);color:var(--color-text-secondary);margin-bottom:var(--space-xl)}
+.order-id-badge{display:inline-block;background:var(--color-surface);border:1.5px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-sm) var(--space-xl);font-size:var(--font-size-h4);font-weight:var(--font-weight-bold);letter-spacing:0.05em;color:var(--color-text);margin-bottom:var(--space-xl)}
+.order-summary-mini{background:var(--color-surface);border-radius:var(--radius-md);padding:var(--space-lg);margin-bottom:var(--space-xl);text-align:left}
+.os-row{display:flex;justify-content:space-between;align-items:flex-start;font-size:var(--font-size-body-sm);padding:var(--space-xs) 0;color:var(--color-text-secondary);border-top:1px solid var(--color-border)}
+.os-row:first-child{border-top:none}
+.os-row--total{font-weight:var(--font-weight-bold);color:var(--color-text);font-size:var(--font-size-body);padding-top:var(--space-sm);margin-top:var(--space-xs);border-top:2px solid var(--color-border)}
+.os-row-label{flex-shrink:0;margin-right:var(--space-md)}
+.os-row-value{text-align:right;color:var(--color-text)}
+.success-actions{display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap}
+.delivery-info{background:rgba(212,32,39,.04);border:1px solid rgba(212,32,39,.2);border-radius:var(--radius-md);padding:var(--space-md);margin-bottom:var(--space-xl);font-size:var(--font-size-body-sm);color:var(--color-text-secondary);display:flex;align-items:center;gap:var(--space-sm);text-align:left}
+.delivery-info .lucide{width:20px;height:20px;color:var(--color-primary);flex-shrink:0}
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+<div class="announcement-bar" role="banner"><div class="container"><p>MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 500.000₫</p></div></div>
+<header class="site-header">
+    <div class="container"><div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Justplay Sportswear — Trang chủ"><img src="images/logo_brand.png" alt="Justplay" class="logo-img"></a>
+        <nav class="main-nav" aria-label="Điều hướng chính"><ul class="nav-list">
+            <li class="nav-item"><a href="products.html?category=nam" class="nav-link">Nam</a></li>
+            <li class="nav-item"><a href="products.html?category=nu" class="nav-link">Nữ</a></li>
+            <li class="nav-item"><a href="products.html?sale=true" class="nav-link nav-link--sale">Giảm giá</a></li>
+        </ul></nav>
+        <div class="header-actions">
+            <a href="login.html" class="header-icon" aria-label="Tài khoản"><i data-lucide="user" aria-hidden="true"></i></a>
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Giỏ hàng"><i data-lucide="shopping-cart" aria-hidden="true"></i><span class="cart-count" aria-live="polite" style="display:none">0</span></a>
+        </div>
+        <button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false"><i data-lucide="menu" aria-hidden="true"></i></button>
+    </div></div>
+</header>
+
+<main id="main-content">
+<div class="success-page">
+    <div class="success-card">
+
+        <div class="success-icon" aria-hidden="true">
+            <i data-lucide="check-circle-2"></i>
+        </div>
+
+        <h1 class="success-title">Đặt hàng thành công!</h1>
+        <p class="success-sub">Cảm ơn bạn đã mua hàng tại Justplay Sportswear.<br>Đơn hàng của bạn đang được xử lý.</p>
+
+        <div class="order-id-badge" id="order-id-display">Mã đơn hàng: #JP-XXXXX</div>
+
+        <div class="delivery-info">
+            <i data-lucide="truck"></i>
+            <span>Đơn hàng của bạn sẽ được giao trong <strong id="shipping-eta">3–5 ngày làm việc</strong>. Chúng tôi sẽ gửi thông báo qua email khi đơn hàng được vận chuyển.</span>
+        </div>
+
+        <div class="order-summary-mini" id="order-summary-mini">
+            <!-- JS renders here -->
+        </div>
+
+        <div class="success-actions">
+            <a href="products.html" class="btn btn--primary">Tiếp tục mua sắm</a>
+            <a href="index.html" class="btn btn--outline">Về trang chủ</a>
+        </div>
+
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h3 class="footer-heading">Về chúng tôi</h3><ul class="footer-links"><li><a href="#">Giới thiệu</a></li><li><a href="#">Liên hệ</a></li></ul></div>
+            <div class="footer-col"><h3 class="footer-heading">Hỗ trợ</h3><ul class="footer-links"><li><a href="#">Chính sách vận chuyển</a></li><li><a href="#">Đổi trả hàng</a></li></ul></div>
+            <div class="footer-col"><h3 class="footer-heading">Cửa hàng</h3><ul class="footer-links"><li><a href="products.html?category=nam">Nam</a></li><li><a href="products.html?category=nu">Nữ</a></li></ul></div>
+            <div class="footer-col"><h3 class="footer-heading">Theo dõi</h3><ul class="footer-links"><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Justplay Sportswear. All rights reserved.</p></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function initOrderSuccess() {
+    // Clear cart on arrival (order is confirmed)
+    localStorage.removeItem('jp_cart');
+    localStorage.setItem('cart_count', '0');
+
+    var order = null;
+    try { order = JSON.parse(localStorage.getItem('jp_last_order')); } catch (_) {}
+
+    var idEl      = document.getElementById('order-id-display');
+    var summaryEl = document.getElementById('order-summary-mini');
+    var etaEl     = document.getElementById('shipping-eta');
+
+    if (!order) {
+        if (idEl) idEl.textContent = 'Mã đơn hàng: #JP-DEMO';
+        summaryEl.innerHTML = '<div class="os-row"><span class="os-row-label">Tổng cộng</span><span class="os-row-value">—</span></div>';
+        lucide.createIcons();
+        return;
+    }
+
+    // Order ID
+    if (idEl) idEl.textContent = 'Mã đơn hàng: #' + order.id;
+
+    // Delivery ETA
+    if (etaEl && order.shipping_method === 'express') etaEl.textContent = '1–2 ngày làm việc';
+
+    function fmt(n) { return (n || 0).toLocaleString('vi-VN') + '₫'; }
+
+    var rows = '';
+
+    // Recipient info
+    if (order.info) {
+        rows += '<div class="os-row"><span class="os-row-label">Người nhận</span><span class="os-row-value">' + order.info.name + '</span></div>';
+        rows += '<div class="os-row"><span class="os-row-label">Số điện thoại</span><span class="os-row-value">' + order.info.phone + '</span></div>';
+        rows += '<div class="os-row"><span class="os-row-label">Email</span><span class="os-row-value">' + order.info.email + '</span></div>';
+        var addr = order.info.address + (order.info.district ? ', ' + order.info.district : '') + (order.info.city ? ', ' + order.info.city : '');
+        rows += '<div class="os-row"><span class="os-row-label">Địa chỉ</span><span class="os-row-value">' + addr + '</span></div>';
+        if (order.info.note) {
+            rows += '<div class="os-row"><span class="os-row-label">Ghi chú</span><span class="os-row-value">' + order.info.note + '</span></div>';
+        }
+    }
+
+    // Shipping & payment
+    rows += '<div class="os-row"><span class="os-row-label">Vận chuyển</span><span class="os-row-value">' + (order.shipping_method_label || order.shipping_method) + '</span></div>';
+    rows += '<div class="os-row"><span class="os-row-label">Thanh toán</span><span class="os-row-value">' + (order.payment_method_label || order.payment_method) + '</span></div>';
+
+    // Items ordered
+    if (order.items && order.items.length > 0) {
+        rows += '<div class="os-row"><span class="os-row-label" style="font-weight:600;color:var(--color-text)">Sản phẩm đã đặt</span><span></span></div>';
+        order.items.forEach(function(item) {
+            rows += '<div class="os-row"><span class="os-row-label" style="padding-left:var(--space-sm)">' + item.name + ' (Size ' + item.size + ' × ' + item.qty + ')</span><span class="os-row-value">' + fmt(item.price * item.qty) + '</span></div>';
+        });
+    }
+
+    // Totals
+    rows += '<div class="os-row"><span class="os-row-label">Tạm tính</span><span class="os-row-value">' + fmt(order.subtotal) + '</span></div>';
+    rows += '<div class="os-row"><span class="os-row-label">Phí vận chuyển</span><span class="os-row-value">' + (order.shipping === 0 ? 'Miễn phí' : fmt(order.shipping)) + '</span></div>';
+    rows += '<div class="os-row os-row--total"><span class="os-row-label">Tổng cộng</span><span class="os-row-value" style="color:var(--color-primary)">' + fmt(order.total) + '</span></div>';
+
+    summaryEl.innerHTML = rows;
+    lucide.createIcons();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+{
+  "products": [
+    {
+      "id": "ao-chay-bo-nam",
+      "name": "Áo chạy bộ nam",
+      "slug": "ao-chay-bo-nam",
+      "category": "nam",
+      "sport": "chay-bo",
+      "price": 599000,
+      "originalPrice": null,
+      "discount": null,
+      "badge": null,
+      "rating": 4.2,
+      "reviewCount": 128,
+      "shortDescription": "Áo thể thao chạy bộ với chất liệu thoáng khí, co giãn 4 chiều.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=Ao+chay+bo+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=Ao+chay+bo+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=Ao+chay+bo",
+      "colors": [
+        { "value": "den", "label": "Đen", "hex": "#111111" },
+        { "value": "do", "label": "Đỏ", "hex": "#D42027" },
+        { "value": "navy", "label": "Xanh navy", "hex": "#1a4d8f" }
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "sizesOutOfStock": ["XXL"],
+      "inStock": true
+    },
+    {
+      "id": "quan-tap-gym",
+      "name": "Quần tập gym",
+      "slug": "quan-tap-gym",
+      "category": "nam",
+      "sport": "gym",
+      "price": 399000,
+      "originalPrice": null,
+      "discount": null,
+      "badge": "new",
+      "rating": 4.5,
+      "reviewCount": 89,
+      "shortDescription": "Quần gym co giãn, thoáng mát, thiết kế ôm vóc.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=Quan+gym+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=Quan+gym+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=Quan+gym",
+      "colors": [
+        { "value": "xam", "label": "Xám", "hex": "#6B7280" },
+        { "value": "den", "label": "Đen", "hex": "#111111" }
+      ],
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "sizesOutOfStock": [],
+      "inStock": true
+    },
+    {
+      "id": "ao-khoac-chay-bo",
+      "name": "Áo khoác chạy bộ",
+      "slug": "ao-khoac-chay-bo",
+      "category": "nam",
+      "sport": "chay-bo",
+      "price": 499000,
+      "originalPrice": 699000,
+      "discount": 29,
+      "badge": "sale",
+      "rating": 4.7,
+      "reviewCount": 56,
+      "shortDescription": "Áo khoác gió chạy bộ siêu nhẹ, chống nước nhẹ.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=Ao+khoac+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=Ao+khoac+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=Ao+khoac",
+      "colors": [
+        { "value": "do", "label": "Đỏ", "hex": "#D42027" },
+        { "value": "den", "label": "Đen", "hex": "#111111" }
+      ],
+      "sizes": ["M", "L", "XL"],
+      "sizesOutOfStock": ["S"],
+      "inStock": true
+    },
+    {
+      "id": "ao-polo-nam",
+      "name": "Áo polo thể thao nam",
+      "slug": "ao-polo-nam",
+      "category": "nam",
+      "sport": "gym",
+      "price": 449000,
+      "originalPrice": 599000,
+      "discount": 25,
+      "badge": "sale",
+      "rating": 4.3,
+      "reviewCount": 67,
+      "shortDescription": "Áo polo thể thao nam, kiểu dáng lịch lãm, phù hợp tập gym và đi chơi.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=Polo+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=Polo+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=Polo",
+      "colors": [
+        { "value": "trang", "label": "Trắng", "hex": "#FFFFFF" },
+        { "value": "den", "label": "Đen", "hex": "#111111" }
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "sizesOutOfStock": [],
+      "inStock": true
+    },
+    {
+      "id": "quan-short-chay-bo",
+      "name": "Quần short chạy bộ",
+      "slug": "quan-short-chay-bo",
+      "category": "nam",
+      "sport": "chay-bo",
+      "price": 349000,
+      "originalPrice": null,
+      "discount": null,
+      "badge": "bestseller",
+      "rating": 4.6,
+      "reviewCount": 203,
+      "shortDescription": "Quần short chạy bộ siêu nhẹ với lớp lót bên trong.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=Short+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=Short+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=Short",
+      "colors": [
+        { "value": "den", "label": "Đen", "hex": "#111111" },
+        { "value": "xam", "label": "Xám", "hex": "#6B7280" }
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "sizesOutOfStock": [],
+      "inStock": true
+    },
+    {
+      "id": "legging-yoga-nu",
+      "name": "Legging yoga nữ",
+      "slug": "legging-yoga-nu",
+      "category": "nu",
+      "sport": "yoga",
+      "price": 549000,
+      "originalPrice": null,
+      "discount": null,
+      "badge": "new",
+      "rating": 4.8,
+      "reviewCount": 145,
+      "shortDescription": "Legging yoga cao cấp, co giãn tối đa, ôm dáng hoàn hảo.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=Legging+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=Legging+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=Legging",
+      "colors": [
+        { "value": "den", "label": "Đen", "hex": "#111111" },
+        { "value": "do", "label": "Đỏ", "hex": "#D42027" }
+      ],
+      "sizes": ["XS", "S", "M", "L"],
+      "sizesOutOfStock": [],
+      "inStock": true
+    },
+    {
+      "id": "sports-bra-nu",
+      "name": "Sports bra nữ",
+      "slug": "sports-bra-nu",
+      "category": "nu",
+      "sport": "gym",
+      "price": 399000,
+      "originalPrice": null,
+      "discount": null,
+      "badge": "bestseller",
+      "rating": 4.4,
+      "reviewCount": 178,
+      "shortDescription": "Sports bra hỗ trợ tốt, thoáng khí cho mọi cường độ tập.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=SBra+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=SBra+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=SBra",
+      "colors": [
+        { "value": "den", "label": "Đen", "hex": "#111111" },
+        { "value": "hong", "label": "Hồng", "hex": "#EC4899" }
+      ],
+      "sizes": ["XS", "S", "M", "L"],
+      "sizesOutOfStock": [],
+      "inStock": true
+    },
+    {
+      "id": "ao-pickleball-nam",
+      "name": "Áo Pickleball nam",
+      "slug": "ao-pickleball-nam",
+      "category": "nam",
+      "sport": "pickleball",
+      "price": 459000,
+      "originalPrice": null,
+      "discount": null,
+      "badge": "new",
+      "rating": 4.1,
+      "reviewCount": 34,
+      "shortDescription": "Áo Pickleball chuyên dụng, thoáng khí tối đa cho sân đấu.",
+      "images": [
+        "https://placehold.co/600x750/EEEEEE/333333?text=Pickle+1",
+        "https://placehold.co/600x750/EEEEEE/444444?text=Pickle+2"
+      ],
+      "thumbnail": "https://placehold.co/120x150/EEEEEE/333333?text=Pickle",
+      "colors": [
+        { "value": "do", "label": "Đỏ", "hex": "#D42027" },
+        { "value": "trang", "label": "Trắng", "hex": "#FFFFFF" }
+      ],
+      "sizes": ["S", "M", "L", "XL"],
+      "sizesOutOfStock": [],
+      "inStock": true
+    }
+  ],
+  "demoCart": [
+    {
+      "id": "ao-chay-bo-nam",
+      "name": "Áo chạy bộ nam",
+      "price": 599000,
+      "originalPrice": null,
+      "size": "M",
+      "color": "den",
+      "colorLabel": "Đen",
+      "qty": 1,
+      "image": "https://placehold.co/120x150/EEEEEE/333333?text=Ao+chay+bo"
+    },
+    {
+      "id": "quan-tap-gym",
+      "name": "Quần tập gym",
+      "price": 399000,
+      "originalPrice": null,
+      "size": "L",
+      "color": "xam",
+      "colorLabel": "Xám",
+      "qty": 2,
+      "image": "https://placehold.co/120x150/EEEEEE/333333?text=Quan+gym"
+    },
+    {
+      "id": "ao-khoac-chay-bo",
+      "name": "Áo khoác chạy bộ",
+      "price": 499000,
+      "originalPrice": 699000,
+      "size": "M",
+      "color": "do",
+      "colorLabel": "Đỏ",
+      "qty": 1,
+      "image": "https://placehold.co/120x150/EEEEEE/333333?text=Ao+khoac"
+    }
+  ]
+}

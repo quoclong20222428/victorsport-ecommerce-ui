@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -98,80 +98,9 @@
                 <!-- ==============================
                      DANH SÁCH SẢN PHẨM
                 ============================== -->
-                <div class="cart-items">
-
-                    <!-- Sản phẩm 1 -->
-                    <div class="cart-item">
-                        <img
-                            src="https://placehold.co/120x150/EEEEEE/333333?text=Áo+chạy+bộ"
-                            alt="Áo chạy bộ nam màu đen"
-                            class="cart-item-image"
-                        >
-                        <div class="cart-item-details">
-                            <h2 class="cart-item-name">
-                                <a href="product-detail.html">Áo chạy bộ nam</a>
-                            </h2>
-                            <p class="cart-item-variant">Size: M | Màu: Đen</p>
-                            <p class="cart-item-price">599.000₫</p>
-                            <div class="cart-item-actions">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn" aria-label="Giảm số lượng"><i data-lucide="minus"></i></button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Số lượng">
-                                    <button type="button" class="qty-btn" aria-label="Tăng số lượng"><i data-lucide="plus"></i></button>
-                                </div>
-                                <button type="button" class="cart-remove-btn" aria-label="Xóa sản phẩm"><i data-lucide="trash-2" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sản phẩm 2 -->
-                    <div class="cart-item">
-                        <img
-                            src="https://placehold.co/120x150/EEEEEE/333333?text=Quần+tập+gym"
-                            alt="Quần tập gym màu xám"
-                            class="cart-item-image"
-                        >
-                        <div class="cart-item-details">
-                            <h2 class="cart-item-name">
-                                <a href="product-detail.html">Quần tập gym</a>
-                            </h2>
-                            <p class="cart-item-variant">Size: L | Màu: Xám</p>
-                            <p class="cart-item-price">399.000₫</p>
-                            <div class="cart-item-actions">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn" aria-label="Giảm số lượng"><i data-lucide="minus"></i></button>
-                                    <input type="number" class="qty-input" value="2" min="1" max="10" aria-label="Số lượng">
-                                    <button type="button" class="qty-btn" aria-label="Tăng số lượng"><i data-lucide="plus"></i></button>
-                                </div>
-                                <button type="button" class="cart-remove-btn" aria-label="Xóa sản phẩm"><i data-lucide="trash-2" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sản phẩm 3 -->
-                    <div class="cart-item">
-                        <img
-                            src="https://placehold.co/120x150/EEEEEE/333333?text=Áo+khoác"
-                            alt="Áo khoác chạy bộ màu đỏ"
-                            class="cart-item-image"
-                        >
-                        <div class="cart-item-details">
-                            <h2 class="cart-item-name">
-                                <a href="product-detail.html">Áo khoác chạy bộ</a>
-                            </h2>
-                            <p class="cart-item-variant">Size: M | Màu: Đỏ</p>
-                            <p class="cart-item-price">499.000₫</p>
-                            <div class="cart-item-actions">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn" aria-label="Giảm số lượng">−</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="10" aria-label="Số lượng">
-                                    <button type="button" class="qty-btn" aria-label="Tăng số lượng">+</button>
-                                </div>
-                                <button type="button" class="cart-remove-btn" aria-label="Xóa Áo khoác chạy bộ">🗑</button>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="cart-items" id="cart-items-container">
+                    <!-- Cart items are rendered dynamically from localStorage by initCartPage() in main.js -->
+                    <!-- On first visit, Cart.seedDemo() auto-populates 3 demo items -->
                 </div>
 
                 <!-- ==============================
@@ -182,7 +111,7 @@
 
                     <div class="summary-row">
                         <span>Tạm tính (4 sản phẩm)</span>
-                        <span>1.497.000₫</span>
+                        <span class="summary-subtotal-value">1.896.000₫</span>
                     </div>
                     <div class="summary-row">
                         <span>Phí vận chuyển</span>
@@ -206,10 +135,13 @@
                     <div class="summary-divider"></div>
                     <div class="summary-row summary-row--total">
                         <span>Tổng cộng</span>
-                        <span>1.497.000₫</span>
+                        <span class="summary-total-value">1.896.000₫</span>
                     </div>
 
-                    <button type="button" class="btn btn--primary btn--full">Tiến hành thanh toán →</button>
+                    <button type="button" id="checkout-btn" class="btn btn--primary btn--full">
+                        Tiến hành thanh toán
+                        <i data-lucide="arrow-right" aria-hidden="true"></i>
+                    </button>
 
                     <div class="cart-trust">
                         <p><i data-lucide="truck" aria-hidden="true" style="display:inline"></i> Miễn phí vận chuyển cho đơn trên 500.000₫</p>
@@ -223,6 +155,16 @@
             <!-- Tiếp tục mua sắm -->
             <div class="cart-continue">
                 <a href="products.html" class="btn btn--ghost"><i data-lucide="arrow-left" aria-hidden="true"></i> Tiếp tục mua sắm</a>
+            </div>
+
+            <!-- Trạng thái giỏ hàng trống -->
+            <div id="cart-empty-state" hidden>
+                <div style="text-align:center;padding:var(--space-4xl) var(--space-lg)">
+                    <i data-lucide="shopping-cart" style="width:64px;height:64px;color:var(--color-border);margin:0 auto var(--space-lg);display:block" aria-hidden="true"></i>
+                    <h2 style="font-size:var(--font-size-h3);margin-bottom:var(--space-sm)">Giỏ hàng của bạn đang trống</h2>
+                    <p style="color:var(--color-text-secondary);margin-bottom:var(--space-xl)">Hãy khám phá bộ sưu tập và thêm sản phẩm yêu thích!</p>
+                    <a href="products.html" class="btn btn--primary">Mua sắm ngay</a>
+                </div>
             </div>
 
         </div>

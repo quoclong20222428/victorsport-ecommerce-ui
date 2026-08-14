@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -142,33 +142,96 @@
     <main id="main-content">
 
         <!-- ==============================
-             HERO SECTION
+             HERO CAROUSEL
         ============================== -->
-        <section class="hero" aria-label="Hero banner">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        Tập luyện<br>
-                        <span>mạnh mẽ hơn.</span>
-                    </h1>
-                    <p class="hero-description">
-                        Thời trang thể thao cao cấp được thiết kế cho vận động viên hàng ngày.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="products.html?category=nam" class="btn btn--primary">Mua sắm Nam</a>
-                        <a href="products.html?category=nu" class="btn btn--secondary">Mua sắm Nữ</a>
+        <section class="hero-carousel" aria-label="Banner quảng cáo Justplay" aria-roledescription="carousel">
+
+            <!-- Slides track -->
+            <div class="hero-carousel-track" aria-live="polite" aria-atomic="false">
+
+                <!-- Slide 1: Chạy bộ -->
+                <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 / 4" aria-hidden="false">
+                    <div class="hero-slide-bg" style="background-image: url('images/hero-slide-1.jpg')"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="container">
+                        <div class="hero-slide-content hero-slide-content--left">
+                            <span class="hero-slide-label">Bộ sưu tập mới 2026</span>
+                            <h1 class="hero-slide-title">Bứt phá<br><span>giới hạn.</span></h1>
+                            <p class="hero-slide-desc">Trang phục chạy bộ công nghệ cao — thoáng khí, co giãn 4 chiều.</p>
+                            <div class="hero-slide-actions">
+                                <a href="products.html?sport=chay-bo" class="btn btn--primary">Khám phá ngay</a>
+                                <a href="products.html" class="btn btn--outline-white">Xem tất cả</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img
-                        src="https://placehold.co/600x750/1a1a1a/FFFFFF?text=Justplay+Hero"
-                        alt="Vận động viên mặc trang phục thể thao Justplay"
-                        width="600"
-                        height="750"
-                        fetchpriority="high"
-                    >
+
+                <!-- Slide 2: Gym -->
+                <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 / 4" aria-hidden="true">
+                    <div class="hero-slide-bg" style="background-image: url('images/hero-slide-2.jpg')"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="container">
+                        <div class="hero-slide-content hero-slide-content--left">
+                            <span class="hero-slide-label">Gym &amp; Fitness</span>
+                            <h2 class="hero-slide-title">Tập chăm.<br><span>Mặc đẹp.</span></h2>
+                            <p class="hero-slide-desc">Bộ sưu tập gym cao cấp — thiết kế ôm vóc, không cản chuyển động.</p>
+                            <div class="hero-slide-actions">
+                                <a href="products.html?sport=gym" class="btn btn--primary">Mua sắm Gym</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Slide 3: Pickleball -->
+                <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 / 4" aria-hidden="true">
+                    <div class="hero-slide-bg" style="background-image: url('images/hero-slide-3.jpg')"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="container">
+                        <div class="hero-slide-content hero-slide-content--left">
+                            <span class="hero-slide-label">Sale Pickleball — Giảm 30%</span>
+                            <h2 class="hero-slide-title">Sân đấu.<br><span>Đỉnh cao.</span></h2>
+                            <p class="hero-slide-desc">Trang phục Pickleball chuyên dụng — linh hoạt, bền bỉ, nổi bật.</p>
+                            <div class="hero-slide-actions">
+                                <a href="sport.html?sport=pickleball" class="btn btn--primary">Sale ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Yoga -->
+                <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 / 4" aria-hidden="true">
+                    <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1600&q=80&auto=format&fit=crop')"></div>
+                    <div class="hero-slide-overlay"></div>
+                    <div class="container">
+                        <div class="hero-slide-content hero-slide-content--left">
+                            <span class="hero-slide-label">Yoga &amp; Wellness</span>
+                            <h2 class="hero-slide-title">Cân bằng.<br><span>Tự do.</span></h2>
+                            <p class="hero-slide-desc">Legging &amp; sports bra cao cấp — co giãn tối đa, ôm dáng hoàn hảo.</p>
+                            <div class="hero-slide-actions">
+                                <a href="products.html?sport=yoga" class="btn btn--primary">Khám phá Yoga</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.hero-carousel-track -->
+
+            <!-- Prev / Next buttons -->
+            <button class="hero-carousel-btn hero-carousel-btn--prev" aria-label="Slide trước" type="button">
+                <i data-lucide="chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="hero-carousel-btn hero-carousel-btn--next" aria-label="Slide tiếp theo" type="button">
+                <i data-lucide="chevron-right" aria-hidden="true"></i>
+            </button>
+
+            <!-- Dot indicators -->
+            <div class="hero-carousel-dots" role="tablist" aria-label="Chọn slide">
+                <button class="hero-dot hero-dot--active" role="tab" aria-selected="true"  aria-label="Slide 1" data-slide="0" type="button"></button>
+                <button class="hero-dot"               role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1" type="button"></button>
+                <button class="hero-dot"               role="tab" aria-selected="false" aria-label="Slide 3" data-slide="2" type="button"></button>
+                <button class="hero-dot"               role="tab" aria-selected="false" aria-label="Slide 4" data-slide="3" type="button"></button>
             </div>
+
         </section>
 
         <!-- ==============================
@@ -245,9 +308,17 @@
                             <div class="product-card-image">
                                 <span class="badge badge--new">Mới</span>
                                 <img
+                                    class="product-img-primary"
                                     src="https://placehold.co/300x375/EEEEEE/333333?text=Áo+chạy+bộ"
                                     alt="Áo chạy bộ nam màu đen"
                                     loading="lazy"
+                                >
+                                <img
+                                    class="product-img-hover"
+                                    src="https://placehold.co/300x375/D4E4D4/1a3a1a?text=Chạy+bộ+—+Góc+sau"
+                                    alt="Áo chạy bộ nam — mặt sau"
+                                    loading="lazy"
+                                    aria-hidden="true"
                                 >
                                 <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
                             </div>
@@ -272,9 +343,17 @@
                             <div class="product-card-image">
                                 <span class="badge badge--sale">-25%</span>
                                 <img
+                                    class="product-img-primary"
                                     src="https://placehold.co/300x375/EEEEEE/333333?text=Quần+tập+gym"
                                     alt="Quần tập gym màu xám"
                                     loading="lazy"
+                                >
+                                <img
+                                    class="product-img-hover"
+                                    src="https://placehold.co/300x375/D4D4E4/1a1a3a?text=Gym+—+Chi+tiết"
+                                    alt="Quần tập gym — chi tiết chất liệu"
+                                    loading="lazy"
+                                    aria-hidden="true"
                                 >
                                 <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
                             </div>
@@ -298,9 +377,17 @@
                         <a href="product-detail.html" class="product-card-link">
                             <div class="product-card-image">
                                 <img
+                                    class="product-img-primary"
                                     src="https://placehold.co/300x375/EEEEEE/333333?text=Quần+legging+yoga"
                                     alt="Quần legging yoga nữ"
                                     loading="lazy"
+                                >
+                                <img
+                                    class="product-img-hover"
+                                    src="https://placehold.co/300x375/E4D4E4/3a1a3a?text=Yoga+—+Tư+thế"
+                                    alt="Quần legging yoga — tư thế yoga"
+                                    loading="lazy"
+                                    aria-hidden="true"
                                 >
                                 <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
                             </div>
@@ -324,9 +411,17 @@
                             <div class="product-card-image">
                                 <span class="badge badge--bestseller">Bán chạy</span>
                                 <img
+                                    class="product-img-primary"
                                     src="https://placehold.co/300x375/EEEEEE/333333?text=Áo+bóng+đá"
                                     alt="Áo bóng đá màu đỏ"
                                     loading="lazy"
+                                >
+                                <img
+                                    class="product-img-hover"
+                                    src="https://placehold.co/300x375/E4D4D4/3a1a1a?text=Bóng+đá+—+In+số"
+                                    alt="Áo bóng đá — mặt in số"
+                                    loading="lazy"
+                                    aria-hidden="true"
                                 >
                                 <button type="button" class="wishlist-btn" aria-label="Thêm vào yêu thích"><i data-lucide="heart" aria-hidden="true"></i></button>
                             </div>

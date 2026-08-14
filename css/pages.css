@@ -4,60 +4,227 @@
    ============================================================ */
 
 /* ==========================================
-   HOMEPAGE — HERO SECTION
+   HOMEPAGE — HERO CAROUSEL
 ========================================== */
-.hero {
-    background: var(--color-surface);
-    padding-block: var(--space-4xl);
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #0a0a0a;
+    /* Fixed height approach — prevents layout shift */
+    height: 580px;
+}
+
+/* Track — holds all slides side by side */
+.hero-carousel-track {
+    display: flex;
+    height: 100%;
+    /* JS will set transform: translateX(-N * 100%) */
+    transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+/* Individual slide */
+.hero-slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
 
-.hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xl);
+/* Background image layer */
+.hero-slide-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.04);
+    transition: transform 6s ease;
+    will-change: transform;
+}
+
+/* Subtle ken-burns on active slide */
+.hero-slide.is-active .hero-slide-bg {
+    transform: scale(1);
+}
+
+/* Dark gradient overlay — left side heavier for text readability */
+.hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.45) 55%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
+}
+
+/* Slide content — sits above overlay */
+.hero-slide .container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
     align-items: center;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+.hero-slide-content {
+    max-width: 560px;
+    color: var(--color-white);
 }
 
-.hero-title {
-    font-size: var(--font-size-display);
+.hero-slide-content--left {
+    margin-right: auto;
+}
+
+/* Eyebrow label */
+.hero-slide-label {
+    display: inline-block;
+    font-size: var(--font-size-body-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-primary);
+    background: rgba(212, 32, 39, 0.15);
+    border: 1px solid rgba(212, 32, 39, 0.4);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-md);
+}
+
+/* Main heading */
+.hero-slide-title {
+    font-size: clamp(36px, 5vw, 64px);
     font-weight: var(--font-weight-bold);
     line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: var(--space-lg);
-    color: var(--color-text);
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-md);
+    color: var(--color-white);
 }
 
-.hero-title span {
+.hero-slide-title span {
     color: var(--color-primary);
 }
 
-.hero-description {
+/* Subtitle */
+.hero-slide-desc {
     font-size: var(--font-size-body-lg);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-xl);
+    color: rgba(255, 255, 255, 0.82);
     line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-xl);
+    max-width: 420px;
 }
 
-.hero-actions {
+/* CTA row */
+.hero-slide-actions {
     display: flex;
     gap: var(--space-md);
     flex-wrap: wrap;
 }
 
-.hero-image img {
-    border-radius: var(--radius-lg);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 4 / 5;
+/* White-outline variant button (for carousel on dark bg) */
+.btn--outline-white {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    padding: 14px 32px;
+    font-size: var(--font-size-body-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
 }
+
+.btn--outline-white:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-white);
+}
+
+/* ---- Prev / Next buttons ---- */
+.hero-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    backdrop-filter: blur(4px);
+}
+
+.hero-carousel-btn:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.hero-carousel-btn--prev { left: var(--space-lg); }
+.hero-carousel-btn--next { right: var(--space-lg); }
+
+.hero-carousel-btn .lucide {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+}
+
+/* ---- Dot indicators ---- */
+.hero-carousel-dots {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+}
+
+.hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition-base), width var(--transition-base), transform var(--transition-fast);
+}
+
+.hero-dot--active,
+.hero-dot:hover {
+    background: var(--color-primary);
+    width: 24px;
+}
+
+/* Reduced motion — disable slide transition, keep opacity fade */
+@media (prefers-reduced-motion: reduce) {
+    .hero-carousel-track {
+        transition: none;
+    }
+    .hero-slide-bg {
+        transition: none;
+    }
+}
+
+
 
 /* ==========================================
    HOMEPAGE — PROMOTION BANNER

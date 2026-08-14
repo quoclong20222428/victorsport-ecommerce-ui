@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanh toán — Justplay Sportswear. Hoàn tất thông tin giao hàng và xác nhận đơn hàng của bạn.">
+    <title>Thanh toán | Justplay Sportswear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+.checkout-breadcrumb{display:flex;align-items:center;gap:var(--space-xs);font-size:var(--font-size-body-sm);color:var(--color-muted);margin-bottom:var(--space-xl);flex-wrap:wrap}
+.checkout-breadcrumb a{color:var(--color-muted);text-decoration:none}
+.checkout-breadcrumb a:hover{color:var(--color-primary)}
+.crumb-active{color:var(--color-text);font-weight:var(--font-weight-semibold)}
+.checkout-layout{display:grid;grid-template-columns:1fr 380px;gap:var(--space-xl);align-items:start}
+.checkout-panel{background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-xl)}
+.checkout-panel+.checkout-panel{margin-top:var(--space-lg)}
+.section-title{font-size:var(--font-size-h4);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--color-border);display:flex;align-items:center;gap:var(--space-xs)}
+.section-title .lucide{width:20px;height:20px;color:var(--color-primary)}
+.form-group{margin-bottom:var(--space-md)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
+.form-label{display:block;font-size:var(--font-size-body-sm);font-weight:var(--font-weight-medium);margin-bottom:var(--space-xs);color:var(--color-text)}
+.req{color:var(--color-primary)}
+.form-input,.form-select{width:100%;padding:var(--space-sm) var(--space-md);border:1.5px solid var(--color-border);border-radius:var(--radius-sm);font-size:var(--font-size-body);font-family:var(--font-family);background:var(--color-white);color:var(--color-text);transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
+.form-input:focus,.form-select:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(212,32,39,.12)}
+.form-input.is-error,.form-select.is-error{border-color:var(--color-error)}
+.form-error-msg{font-size:var(--font-size-caption);color:var(--color-error);margin-top:var(--space-2xs);display:none}
+.form-input.is-error~.form-error-msg,.form-select.is-error~.form-error-msg{display:block}
+.method-options{display:flex;flex-direction:column;gap:var(--space-sm)}
+.method-option{display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);border:1.5px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;transition:border-color var(--transition-fast),background var(--transition-fast)}
+.method-option:hover,.method-option:has(input:checked){border-color:var(--color-primary);background:rgba(212,32,39,.04)}
+.method-option input[type=radio]{accent-color:var(--color-primary);width:18px;height:18px;flex-shrink:0}
+.method-name{font-weight:var(--font-weight-semibold);font-size:var(--font-size-body-sm)}
+.method-desc{font-size:var(--font-size-caption);color:var(--color-muted)}
+.method-price{margin-left:auto;font-weight:var(--font-weight-semibold);font-size:var(--font-size-body-sm);white-space:nowrap}
+.checkout-summary{background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-xl);position:sticky;top:calc(var(--header-height) + var(--space-md))}
+.cs-title{font-size:var(--font-size-body);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--color-border)}
+.co-item{display:flex;gap:var(--space-sm);align-items:center;margin-bottom:var(--space-sm)}
+.co-img{width:56px;height:70px;object-fit:cover;border-radius:var(--radius-sm);background:var(--color-surface);flex-shrink:0}
+.co-info{flex:1;min-width:0}
+.co-name{font-size:var(--font-size-body-sm);font-weight:var(--font-weight-medium);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.co-variant{font-size:var(--font-size-caption);color:var(--color-muted)}
+.co-price{font-size:var(--font-size-body-sm);font-weight:var(--font-weight-semibold);white-space:nowrap}
+.s-divider{border:none;border-top:1px solid var(--color-border);margin-block:var(--space-md)}
+.s-row{display:flex;justify-content:space-between;align-items:center;font-size:var(--font-size-body-sm);margin-bottom:var(--space-xs);color:var(--color-text-secondary)}
+.s-row--total{font-size:var(--font-size-body);font-weight:var(--font-weight-bold);color:var(--color-text);margin-top:var(--space-sm)}
+.s-free{color:var(--color-success);font-weight:var(--font-weight-medium)}
+.cs-trust{margin-top:var(--space-md);display:flex;flex-direction:column;gap:var(--space-xs);font-size:var(--font-size-caption);color:var(--color-muted)}
+.cs-trust p{display:flex;align-items:center;gap:var(--space-xs)}
+.cs-trust .lucide{width:14px;height:14px;flex-shrink:0}
+@media(max-width:768px){.checkout-layout{grid-template-columns:1fr}.checkout-summary{position:static;order:-1}.form-row{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+<div class="announcement-bar" role="banner"><div class="container"><p>MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 500.000₫</p></div></div>
+<header class="site-header">
+    <div class="container"><div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Justplay Sportswear — Trang chủ"><img src="images/logo_brand.png" alt="Justplay" class="logo-img"></a>
+        <nav class="main-nav" aria-label="Điều hướng chính"><ul class="nav-list">
+            <li class="nav-item"><a href="products.html?category=nam" class="nav-link">Nam</a></li>
+            <li class="nav-item"><a href="products.html?category=nu" class="nav-link">Nữ</a></li>
+            <li class="nav-item"><a href="products.html?sale=true" class="nav-link nav-link--sale">Giảm giá</a></li>
+        </ul></nav>
+        <div class="header-actions">
+            <form class="search-form" action="products.html" method="get" role="search">
+                <label for="hs" class="sr-only">Tìm kiếm</label>
+                <input id="hs" name="q" type="search" placeholder="Tìm kiếm..." class="search-input" autocomplete="off">
+                <button type="submit" class="search-btn" aria-label="Tìm kiếm"><i data-lucide="search" aria-hidden="true"></i></button>
+            </form>
+            <a href="login.html" class="header-icon" aria-label="Tài khoản"><i data-lucide="user" aria-hidden="true"></i></a>
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Giỏ hàng"><i data-lucide="shopping-cart" aria-hidden="true"></i><span class="cart-count" aria-live="polite" style="display:none">0</span></a>
+        </div>
+        <button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" aria-hidden="true"></i></button>
+    </div></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menu di động" hidden>
+        <button class="mobile-nav-close" aria-label="Đóng menu"><i data-lucide="x" aria-hidden="true"></i></button>
+        <ul class="mobile-nav-list">
+            <li><a href="products.html?category=nam">Nam</a></li>
+            <li><a href="products.html?category=nu">Nữ</a></li>
+            <li><a href="products.html?sale=true">Giảm giá</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+<div class="container" style="padding-top:var(--space-xl);padding-bottom:var(--space-3xl)">
+
+    <nav class="checkout-breadcrumb" aria-label="Quy trình thanh toán">
+        <a href="cart.html">Giỏ hàng</a>
+        <span aria-hidden="true"><i data-lucide="chevron-right" style="width:14px;height:14px"></i></span>
+        <span class="crumb-active" aria-current="step">Thanh toán</span>
+        <span aria-hidden="true"><i data-lucide="chevron-right" style="width:14px;height:14px"></i></span>
+        <span style="color:var(--color-muted)">Xác nhận</span>
+    </nav>
+
+    <h1 class="page-title" style="margin-bottom:var(--space-xl)">Thanh toán</h1>
+
+    <div id="checkout-empty-guard" hidden style="text-align:center;padding:var(--space-4xl) var(--space-lg)">
+        <i data-lucide="shopping-cart" style="width:56px;height:56px;color:var(--color-border);margin:0 auto var(--space-lg);display:block" aria-hidden="true"></i>
+        <h2 style="font-size:var(--font-size-h3);margin-bottom:var(--space-sm)">Giỏ hàng đang trống</h2>
+        <p style="color:var(--color-text-secondary);margin-bottom:var(--space-xl)">Bạn chưa có sản phẩm nào trong giỏ hàng.</p>
+        <a href="products.html" class="btn btn--primary">Mua sắm ngay</a>
+    </div>
+
+    <div id="checkout-content" class="checkout-layout">
+
+        <!-- FORM THANH TOÁN -->
+        <div>
+          <form id="checkout-form" novalidate>
+
+            <!-- 1. Thông tin giao hàng -->
+            <div class="checkout-panel">
+                <h2 class="section-title"><i data-lucide="map-pin" aria-hidden="true"></i> Thông tin giao hàng</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="full-name">Họ và tên <span class="req">*</span></label>
+                        <input type="text" id="full-name" name="fullName" class="form-input" placeholder="Nguyễn Văn A" autocomplete="name" required>
+                        <span class="form-error-msg">Vui lòng nhập họ và tên.</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="phone">Số điện thoại <span class="req">*</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="0901 234 567" autocomplete="tel" required>
+                        <span class="form-error-msg">Vui lòng nhập số điện thoại hợp lệ.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email <span class="req">*</span></label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" autocomplete="email" required>
+                    <span class="form-error-msg">Vui lòng nhập địa chỉ email hợp lệ.</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="address">Địa chỉ giao hàng <span class="req">*</span></label>
+                    <input type="text" id="address" name="address" class="form-input" placeholder="Số nhà, tên đường, khu phố" autocomplete="street-address" required>
+                    <span class="form-error-msg">Vui lòng nhập địa chỉ giao hàng.</span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="city">Tỉnh/Thành phố <span class="req">*</span></label>
+                        <select id="city" name="city" class="form-select" required>
+                            <option value="" disabled selected>Chọn tỉnh/thành</option>
+                            <option>Hà Nội</option>
+                            <option>TP. Hồ Chí Minh</option>
+                            <option>Đà Nẵng</option>
+                            <option>Hải Phòng</option>
+                            <option>Cần Thơ</option>
+                            <option>Bình Dương</option>
+                            <option>Đồng Nai</option>
+                            <option>Khánh Hòa</option>
+                            <option>Nghệ An</option>
+                            <option>Thanh Hóa</option>
+                            <option>Thừa Thiên Huế</option>
+                            <option>Tỉnh/Thành khác</option>
+                        </select>
+                        <span class="form-error-msg">Vui lòng chọn tỉnh/thành phố.</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="district">Phường/Xã <span class="req">*</span></label>
+                        <select id="district" name="district" class="form-select" required disabled>
+                            <option value="" disabled selected>Chọn tỉnh/thành trước</option>
+                        </select>
+                        <span class="form-error-msg">Vui lòng chọn phường/xã.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="note">Ghi chú đơn hàng</label>
+                    <textarea id="note" name="note" class="form-input" rows="2" placeholder="Ghi chú thêm cho người giao hàng (không bắt buộc)..." style="resize:vertical"></textarea>
+                </div>
+            </div>
+
+            <!-- 2. Phương thức vận chuyển -->
+            <div class="checkout-panel">
+                <h2 class="section-title"><i data-lucide="truck" aria-hidden="true"></i> Phương thức vận chuyển</h2>
+                <div class="method-options">
+                    <label class="method-option">
+                        <input type="radio" name="shipping" value="standard" checked>
+                        <div class="method-content">
+                            <div class="method-name">Giao hàng tiêu chuẩn</div>
+                            <div class="method-desc">3–5 ngày làm việc</div>
+                        </div>
+                        <span class="method-price">Miễn phí</span>
+                    </label>
+                    <label class="method-option">
+                        <input type="radio" name="shipping" value="express">
+                        <div class="method-content">
+                            <div class="method-name">Giao hàng nhanh</div>
+                            <div class="method-desc">1–2 ngày làm việc</div>
+                        </div>
+                        <span class="method-price">30.000₫</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 3. Phương thức thanh toán -->
+            <div class="checkout-panel">
+                <h2 class="section-title"><i data-lucide="credit-card" aria-hidden="true"></i> Phương thức thanh toán</h2>
+                <div class="method-options">
+                    <label class="method-option">
+                        <input type="radio" name="payment" value="cod" checked>
+                        <div class="method-content">
+                            <div class="method-name">Thanh toán khi nhận hàng (COD)</div>
+                            <div class="method-desc">Trả tiền mặt khi nhận hàng</div>
+                        </div>
+                    </label>
+                    <label class="method-option">
+                        <input type="radio" name="payment" value="bank">
+                        <div class="method-content">
+                            <div class="method-name">Chuyển khoản ngân hàng</div>
+                            <div class="method-desc">VietcomBank · MB Bank · Techcombank</div>
+                        </div>
+                    </label>
+                    <label class="method-option">
+                        <input type="radio" name="payment" value="momo">
+                        <div class="method-content">
+                            <div class="method-name">Ví MoMo</div>
+                            <div class="method-desc">Thanh toán qua ví điện tử MoMo</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- TÓM TẮT ĐƠN HÀNG -->
+        <aside class="checkout-summary" aria-label="Tóm tắt đơn hàng">
+            <h2 class="cs-title">Đơn hàng của bạn</h2>
+            <div id="checkout-item-list"></div>
+            <hr class="s-divider">
+            <div class="s-row"><span>Tạm tính</span><span id="co-subtotal">—</span></div>
+            <div class="s-row"><span>Phí vận chuyển</span><span id="co-shipping" class="s-free">Miễn phí</span></div>
+            <hr class="s-divider">
+            <div class="s-row s-row--total"><span>Tổng cộng</span><span id="co-total" style="color:var(--color-primary)">—</span></div>
+
+            <div style="margin-top:var(--space-lg)">
+                <button type="button" id="confirm-order-btn" class="btn btn--primary btn--full" style="gap:var(--space-xs);display:flex;align-items:center;justify-content:center">
+                    <i data-lucide="check-circle" aria-hidden="true"></i>
+                    Xác nhận đặt hàng
+                </button>
+                <a href="cart.html" class="btn btn--ghost btn--full" style="margin-top:var(--space-sm);display:flex;align-items:center;justify-content:center;gap:var(--space-xs)">
+                    <i data-lucide="arrow-left" aria-hidden="true"></i>
+                    Quay lại giỏ hàng
+                </a>
+            </div>
+
+            <div class="cs-trust">
+                <p><i data-lucide="shield-check"></i> Thanh toán an toàn &amp; bảo mật</p>
+                <p><i data-lucide="rotate-ccw"></i> Đổi trả miễn phí trong 30 ngày</p>
+                <p><i data-lucide="truck"></i> Miễn phí vận chuyển đơn trên 500.000₫</p>
+            </div>
+        </aside>
+
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h3 class="footer-heading">Về chúng tôi</h3><ul class="footer-links"><li><a href="#">Giới thiệu</a></li><li><a href="#">Liên hệ</a></li></ul></div>
+            <div class="footer-col"><h3 class="footer-heading">Hỗ trợ</h3><ul class="footer-links"><li><a href="#">Chính sách vận chuyển</a></li><li><a href="#">Đổi trả hàng</a></li></ul></div>
+            <div class="footer-col"><h3 class="footer-heading">Cửa hàng</h3><ul class="footer-links"><li><a href="products.html?category=nam">Nam</a></li><li><a href="products.html?category=nu">Nữ</a></li></ul></div>
+            <div class="footer-col"><h3 class="footer-heading">Theo dõi</h3><ul class="footer-links"><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Justplay Sportswear. All rights reserved.</p></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function initCheckoutPage() {
+    function loadCart() {
+        try { return JSON.parse(localStorage.getItem('jp_cart')) || []; }
+        catch (_) { return []; }
+    }
+
+    var items = loadCart();
+
+    if (items.length === 0) {
+        document.getElementById('checkout-empty-guard').hidden = false;
+        document.getElementById('checkout-content').hidden = true;
+        lucide.createIcons();
+        return;
+    }
+
+    document.getElementById('checkout-empty-guard').hidden = true;
+
+    var listEl     = document.getElementById('checkout-item-list');
+    var subtotalEl = document.getElementById('co-subtotal');
+    var shippingEl = document.getElementById('co-shipping');
+    var totalEl    = document.getElementById('co-total');
+    var shippingCost = 0;
+    var subtotal = 0;
+
+    items.forEach(function(item) {
+        subtotal += item.price * item.qty;
+        var d = document.createElement('div');
+        d.className = 'co-item';
+        d.innerHTML =
+            '<img class="co-img" src="' + (item.image || 'https://placehold.co/56x70/EEEEEE/333333?text=SP') + '" alt="' + item.name + '">' +
+            '<div class="co-info">' +
+            '  <div class="co-name">' + item.name + '</div>' +
+            '  <div class="co-variant">Size: ' + item.size + ' | Màu: ' + (item.colorLabel || item.color) + ' | SL: ' + item.qty + '</div>' +
+            '</div>' +
+            '<span class="co-price">' + (item.price * item.qty).toLocaleString('vi-VN') + '₫</span>';
+        listEl.appendChild(d);
+    });
+
+    function fmt(n) { return n.toLocaleString('vi-VN') + '₫'; }
+
+    function renderTotals() {
+        subtotalEl.textContent = fmt(subtotal);
+        if (shippingCost === 0) {
+            shippingEl.textContent = 'Miễn phí';
+            shippingEl.className = 's-free';
+        } else {
+            shippingEl.textContent = fmt(shippingCost);
+            shippingEl.className = '';
+        }
+        totalEl.textContent = fmt(subtotal + shippingCost);
+    }
+    renderTotals();
+
+    document.querySelectorAll('input[name="shipping"]').forEach(function(r) {
+        r.addEventListener('change', function() {
+            shippingCost = this.value === 'express' ? 30000 : 0;
+            renderTotals();
+        });
+    });
+
+    function validateForm() {
+        var ok = true;
+        ['full-name', 'phone', 'email', 'address', 'city', 'district'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            var valid = el.value.trim() !== '';
+            if (id === 'email' && valid) valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+            el.classList.toggle('is-error', !valid);
+            if (!valid) ok = false;
+        });
+        return ok;
+    }
+
+    document.getElementById('confirm-order-btn').addEventListener('click', function() {
+        if (!validateForm()) {
+            var first = document.querySelector('.form-input.is-error, .form-select.is-error');
+            if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        var shippingLabels = { standard: 'Giao hàng tiêu chuẩn (3–5 ngày)', express: 'Giao hàng nhanh (1–2 ngày)' };
+        var paymentLabels  = { cod: 'Thanh toán khi nhận hàng (COD)', bank: 'Chuyển khoản ngân hàng', momo: 'Ví MoMo' };
+
+        var order = {
+            id:      'JP-' + Math.floor(10000 + Math.random() * 90000),
+            date:    new Date().toISOString(),
+            items:   items,
+            subtotal: subtotal,
+            shipping: shippingCost,
+            total:   subtotal + shippingCost,
+            info: {
+                name:    document.getElementById('full-name').value.trim(),
+                phone:   document.getElementById('phone').value.trim(),
+                email:   document.getElementById('email').value.trim(),
+                address: document.getElementById('address').value.trim(),
+                district: document.getElementById('district').value.trim(),
+                city:    document.getElementById('city').value,
+                note:    document.getElementById('note').value.trim()
+            },
+            shipping_method:      document.querySelector('input[name="shipping"]:checked').value,
+            shipping_method_label: shippingLabels[document.querySelector('input[name="shipping"]:checked').value] || '',
+            payment_method:        document.querySelector('input[name="payment"]:checked').value,
+            payment_method_label:  paymentLabels[document.querySelector('input[name="payment"]:checked').value] || '',
+            status: 'confirmed'
+        };
+
+        localStorage.setItem('jp_last_order', JSON.stringify(order));
+        localStorage.removeItem('jp_cart');
+        localStorage.setItem('cart_count', '0');
+        window.location.href = 'order-success.html';
+    });
+
+    document.querySelectorAll('.form-input, .form-select').forEach(function(el) {
+        el.addEventListener('input', function() { this.classList.remove('is-error'); });
+        el.addEventListener('change', function() { this.classList.remove('is-error'); });
+    });
+
+    // ---- Cascading: Tỉnh/Thành → Phường/Xã dropdown ----
+    // Data from Danh-sách-cấp-xã-___14_01_2026.csv (inlined for file:// compatibility)
+    var WARD_DATA = {"Hà Nội":["Phường Ba Đình","Phường Ngọc Hà","Phường Giảng Võ","Phường Hoàn Kiếm","Phường Cửa Nam","Phường Phú Thượng","Phường Hồng Hà","Phường Tây Hồ","Phường Bồ Đề","Phường Việt Hưng","Phường Phúc Lợi","Phường Long Biên","Phường Nghĩa Đô","Phường Cầu Giấy","Phường Yên Hòa","Phường Ô Chợ Dừa","Phường Láng","Phường Văn Miếu - Quốc Tử Giám","Phường Kim Liên","Phường Đống Đa","Phường Hai Bà Trưng","Phường Vĩnh Tuy","Phường Bạch Mai","Phường Vĩnh Hưng","Phường Định Công","Phường Tương Mai","Phường Lĩnh Nam","Phường Hoàng Mai","Phường Hoàng Liệt","Phường Yên Sở","Phường Phương Liệt","Phường Khương Đình","Phường Thanh Xuân","Xã Sóc Sơn","Xã Kim Anh","Xã Trung Giã ","Xã Đa Phúc","Xã Nội Bài","Xã Đông Anh","Xã Phúc Thịnh","Xã Thư Lâm","Xã Thiên Lộc","Xã Vĩnh Thanh","Xã Phù Đổng","Xã Thuận An","Xã Gia Lâm","Xã Bát Tràng","Phường Từ Liêm","Phường Thượng Cát","Phường Đông Ngạc","Phường Xuân Đỉnh","Phường Tây Tựu","Phường Phú Diễn","Phường Xuân Phương ","Phường Tây Mỗ","Phường Đại Mỗ","Xã Thanh Trì","Phường Thanh Liệt","Xã Đại Thanh","Xã Ngọc Hồi","Xã Nam Phù","Xã Yên Xuân","Xã Quang Minh","Xã Yên Lãng","Xã Tiến Thắng","Xã Mê Linh","Phường Kiến Hưng ","Phường Hà Đông","Phường Yên Nghĩa","Phường Phú Lương","Phường Sơn Tây","Phường Tùng Thiện","Xã Đoài Phương","Xã Quảng Oai","Xã Cổ Đô","Xã Minh Châu","Xã Vật Lại","Xã Bất Bạt","Xã Suối Hai","Xã Ba Vì","Xã Yên Bài ","Xã Phúc Thọ","Xã Phúc Lộc","Xã Hát Môn","Xã Đan Phượng","Xã Liên Minh","Xã Ô Diên","Xã Hoài Đức","Xã Dương Hòa","Xã Sơn Đồng","Xã An Khánh","Phường Dương Nội","Xã Quốc Oai","Xã Kiều Phú","Xã Hưng Đạo ","Xã Phú Cát ","Xã Thạch Thất","Xã Hạ Bằng","Xã Hòa Lạc","Xã Tây Phương","Phường Chương Mỹ","Xã Phú Nghĩa","Xã Xuân Mai","Xã Quảng Bị","Xã Trần Phú ","Xã Hòa Phú ","Xã Thanh Oai","Xã Bình Minh ","Xã Tam Hưng","Xã Dân Hòa ","Xã Thường Tín","Xã Hồng Vân","Xã Thượng Phúc","Xã Chương Dương","Xã Phú Xuyên","Xã Phượng Dực","Xã Chuyên Mỹ","Xã Đại Xuyên","Xã Vân Đình","Xã Ứng Thiên","Xã Ứng Hòa","Xã Hòa Xá","Xã Mỹ Đức","Xã Phúc Sơn","Xã Hồng Sơn","Xã Hương Sơn"],"TP. Hồ Chí Minh":["Phường Thủ Dầu Một","Phường Phú Lợi","Phường Bình Dương","Phường Phú An","Phường Chánh Hiệp","Xã Dầu Tiếng","Xã Minh Thạnh","Xã Long Hòa","Xã Thanh An","Phường Bến Cát","Xã Trừ Văn Thố","Xã Bàu Bàng","Phường Chánh Phú Hòa","Phường Long Nguyên","Phường Tây Nam","Phường Thới Hòa","Phường Hòa Lợi","Xã Phú Giáo","Xã Phước Thành","Xã An Long","Xã Phước Hòa","Phường Tân Uyên","Phường Tân Khánh","Xã Bắc Tân Uyên","Xã Thường Tân","Phường Vĩnh Tân","Phường Bình Cơ","Phường Tân Hiệp","Phường Dĩ An","Phường Tân Đông Hiệp","Phường Đông Hòa","Phường Lái Thiêu","Phường Thuận Giao","Phường An Phú","Phường Thuận An","Phường Bình Hòa","Phường Vũng Tàu","Phường Tam Thắng","Phường Rạch Dừa","Phường Phước Thắng","Xã Long Sơn","Phường Bà Rịa","Phường Long Hương","Phường Tam Long","Xã Ngãi Giao","Xã Xuân Sơn","Xã Bình Giã","Xã Châu Đức","Xã Kim Long","Xã Nghĩa Thành","Xã Hồ Tràm","Xã Xuyên Mộc","Xã Bàu Lâm","Xã Hòa Hội","Xã Hòa Hiệp","Xã Bình Châu","Xã Long Điền","Xã Long Hải","Xã Đất Đỏ","Xã Phước Hải","Phường Phú Mỹ","Phường Tân Hải","Phường Tân Phước","Phường Tân Thành","Xã Châu Pha","Đặc khu Côn Đảo","Phường Tân Định","Phường Sài Gòn","Phường Bến Thành","Phường Cầu Ông Lãnh","Phường An Phú Đông","Phường Thới An","Phường Tân Thới Hiệp","Phường Trung Mỹ Tây","Phường Đông Hưng Thuận","Phường Linh Xuân","Phường Tam Bình","Phường Hiệp Bình","Phường Thủ Đức","Phường Long Bình","Phường Tăng Nhơn Phú","Phường Phước Long","Phường Long Phước","Phường Long Trường","Phường An Nhơn","Phường An Hội Đông","Phường An Hội Tây","Phường Gò Vấp","Phường Hạnh Thông","Phường Thông Tây Hội","Phường Bình Lợi Trung","Phường Bình Quới","Phường Bình Thạnh","Phường Gia Định","Phường Thạnh Mỹ Tây","Phường Tân Sơn Nhất","Phường Tân Sơn Hòa","Phường Bảy Hiền","Phường Tân Hòa","Phường Tân Bình","Phường Tân Sơn","Phường Tây Thạnh","Phường Tân Sơn Nhì","Phường Phú Thọ Hòa","Phường Phú Thạnh","Phường Tân Phú","Phường Đức Nhuận","Phường Cầu Kiệu","Phường Phú Nhuận","Phường An Khánh","Phường Bình Trưng","Phường Cát Lái","Phường Xuân Hòa","Phường Nhiêu Lộc","Phường Bàn Cờ","Phường Hòa Hưng","Phường Diên Hồng","Phường Vườn Lài","Phường Hòa Bình","Phường Phú Thọ","Phường Bình Thới","Phường Minh Phụng","Phường Xóm Chiếu","Phường Khánh Hội","Phường Vĩnh Hội","Phường Chợ Quán","Phường An Đông","Phường Chợ Lớn","Phường Phú Lâm","Phường Bình Phú","Phường Bình Tây","Phường Bình Tiên","Phường Chánh Hưng","Phường Bình Đông","Phường Phú Định","Phường Bình Hưng Hòa","Phường Bình Tân","Phường Bình Trị Đông","Phường Tân Tạo","Phường An Lạc","Phường Tân Hưng","Phường Tân Thuận","Phường Phú Thuận","Phường Tân Mỹ","Xã Tân An Hội","Xã An Nhơn Tây","Xã Nhuận Đức","Xã Thái Mỹ","Xã Phú Hòa Đông","Xã Bình Mỹ","Xã Củ Chi","Xã Hóc Môn","Xã Đông Thạnh","Xã Xuân Thới Sơn","Xã Bà Điểm","Xã Tân Nhựt","Xã Vĩnh Lộc","Xã Tân Vĩnh Lộc","Xã Bình Lợi","Xã Bình Hưng","Xã Hưng Long","Xã Bình Chánh","Xã Nhà Bè","Xã Hiệp Phước","Xã Cần Giờ","Xã Bình Khánh","Xã An Thới Đông","Xã Thạnh An"],"Đà Nẵng":["Phường Hải Vân","Phường Liên Chiểu","Phường Hòa Khánh","Phường Thanh Khê","Phường Hải Châu","Phường Hòa Cường","Phường Cẩm Lệ","Phường Sơn Trà","Phường An Hải","Phường Ngũ Hành Sơn","Phường An Khê","Xã Bà Nà","Phường Hòa Xuân","Xã Hòa Vang","Xã Hòa Tiến","Đặc khu Hoàng Sa","Phường Bàn Thạch","Phường Tam Kỳ","Phường Hương Trà","Phường Quảng Phú","Xã Chiên Đàn","Xã Tây Hồ","Xã Phú Ninh","Phường Hội An Tây","Phường Hội An","Phường Hội An Đông","Xã Tân Hiệp","Xã Hùng Sơn","Xã Tây Giang","Xã Avương","Xã Đông Giang","Xã Sông Kôn","Xã Sông Vàng","Xã Bến Hiên","Xã Đại Lộc","Xã Thượng Đức","Xã Hà Nha","Xã Vu Gia","Xã Phú Thuận","Phường Điện Bàn","Phường Điện Bàn Bắc","Xã Điện Bàn Tây","Phường An Thắng","Phường Điện Bàn Đông","Xã Gò Nổi","Xã Nam Phước","Xã Thu Bồn","Xã Duy Xuyên","Xã Duy Nghĩa","Xã Quế Sơn","Xã Xuân Phú","Xã Nông Sơn","Xã Quế Sơn Trung","Xã Quế Phước","Xã Thạnh Mỹ","Xã La Êê","Xã La Dêê","Xã Nam Giang","Xã Bến Giằng","Xã Đắc Pring","Xã Khâm Đức","Xã Phước Hiệp","Xã Phước Năng","Xã Phước Chánh","Xã Phước Thành","Xã Việt An","Xã Phước Trà","Xã Hiệp Đức","Xã Thăng Bình","Xã Thăng An","Xã Đồng Dương","Xã Thăng Phú","Xã Thăng Trường","Xã Thăng Điền","Xã Tiên Phước","Xã Sơn Cẩm Hà","Xã Lãnh Ngọc","Xã Thạnh Bình","Xã Trà My","Xã Trà Liên","Xã Trà Đốc","Xã Trà Tân","Xã Trà Giáp","Xã Trà Leng","Xã Trà Tập","Xã Nam Trà My","Xã Trà Linh","Xã Trà Vân","Xã Núi Thành","Xã Tam Xuân","Xã Đức Phú","Xã Tam Anh","Xã Tam Hải","Xã Tam Mỹ"],"Hải Phòng":["Phường Thành Đông","Phường Hải Dương","Phường Lê Thanh Nghị","Phường Tân Hưng","Phường Việt Hòa","Phường Chí Linh","Phường Chu Văn An","Phường Nguyễn Trãi","Phường Trần Hưng Đạo","Phường Trần Nhân Tông","Phường Lê Đại Hành","Xã Nam Sách","Xã Hợp Tiến","Xã Trần Phú","Xã Thái Tân","Xã An Phú","Phường Ái Quốc","Phường Kinh Môn","Phường Bắc An Phụ","Xã Nam An Phụ","Phường Nhị Chiểu","Phường Phạm Sư Mạnh","Phường Trần Liễu","Phường Nguyễn Đại Năng","Xã Phú Thái","Xã Lai Khê","Xã An Thành","Xã Kim Thành","Xã Thanh Hà","Xã Hà Bắc","Phường Nam Đồng","Xã Hà Nam","Xã Hà Tây","Xã Hà Đông","Xã Cẩm Giang","Phường Tứ Minh","Xã Cẩm Giàng","Xã Tuệ Tĩnh","Xã Mao Điền","Xã Kẻ Sặt","Xã Bình Giang","Xã Đường An","Xã Thượng Hồng","Xã Gia Lộc","Phường Thạch Khôi","Xã Yết Kiêu","Xã Gia Phúc","Xã Trường Tân","Xã Tứ Kỳ","Xã Đại Sơn","Xã Tân Kỳ","Xã Chí Minh","Xã Lạc Phượng","Xã Nguyên Giáp","Xã Vĩnh Lại","Xã Tân An","Xã Ninh Giang","Xã Hồng Châu","Xã Khúc Thừa Dụ","Xã Thanh Miện","Xã Nguyễn Lương Bằng","Xã Bắc Thanh Miện","Xã Hải Hưng","Xã Nam Thanh Miện","Phường Hồng Bàng","Phường Ngô Quyền","Phường Gia Viên","Phường Lê Chân","Phường An Biên","Phường Đông Hải","Phường Hải An","Phường Kiến An","Phường Phù Liễn","Phường Đồ Sơn","Phường Bạch Đằng","Phường Lưu Kiếm","Xã Việt Khê","Phường Lê Ích Mộc","Phường Hòa Bình","Phường Nam Triệu","Phường Thiên Hương","Phường Thủy Nguyên","Phường An Dương","Phường An Phong","Phường Hồng An","Phường An Hải","Xã An Lão","Xã An Trường","Xã An Quang","Xã An Khánh","Xã An Hưng","Xã Kiến Thụy","Phường Hưng Đạo","Phường Dương Kinh","Xã Nghi Dương","Xã Kiến Minh","Xã Kiến Hưng","Phường Nam Đồ Sơn","Xã Kiến Hải","Xã Tiên Lãng","Xã Quyết Thắng","Xã Tân Minh","Xã Tiên Minh","Xã Chấn Hưng","Xã Hùng Thắng","Xã Vĩnh Bảo","Xã Vĩnh Thịnh","Xã Vĩnh Thuận","Xã Vĩnh Hòa","Xã Vĩnh Hải","Xã Vĩnh Am","Xã Nguyễn Bỉnh Khiêm","Đặc khu Cát Hải","Đặc khu Bạch Long Vĩ"],"Cần Thơ":["Phường Cái Khế","Phường Ninh Kiều","Phường Tân An","Phường An Bình","Phường Ô Môn","Phường Thới Long","Phường Phước Thới","Phường Bình Thủy","Phường Thới An Đông","Phường Long Tuyền","Phường Cái Răng","Phường Hưng Phú","Phường Thốt Nốt","Phường Tân Lộc","Phường Trung Nhứt","Phường Thuận Hưng","Xã Thạnh An","Xã Vĩnh Thạnh","Xã Vĩnh Trinh","Xã Thạnh Quới","Xã Thạnh Phú","Xã Trung Hưng","Xã Thới Lai","Xã Cờ Đỏ","Xã Thới Hưng","Xã Đông Hiệp","Xã Đông Thuận","Xã Trường Thành","Xã Trường Xuân","Xã Phong Điền","Xã Trường Long","Xã Nhơn Ái","Phường Vị Thanh","Phường Vị Tân","Xã Hỏa Lựu","Phường Ngã Bảy","Xã Tân Hòa","Xã Trường Long Tây","Xã Thạnh Xuân","Xã Châu Thành","Xã Đông Phước","Xã Phú Hữu","Xã Hòa An","Xã Hiệp Hưng","Xã Tân Bình","Xã Thạnh Hòa","Phường Đại Thành","Xã Phụng Hiệp","Xã Phương Bình","Xã Tân Phước Hưng","Xã Vị Thủy","Xã Vĩnh Thuận Đông","Xã  Vĩnh Tường","Xã Vị Thanh 1","Phường Long Mỹ  ","Phường Long Bình","Phường Long Phú 1","Xã Vĩnh Viễn","Xã Lương Tâm","Xã Xà Phiên","Phường Sóc Trăng","Phường Phú Lợi","Xã Kế Sách","Xã An Lạc Thôn","Xã Phong Nẫm","Xã Thới An Hội","Xã Nhơn Mỹ","Xã Đại Hải","Xã Mỹ Tú","Xã Phú Tâm","Xã Hồ Đắc Kiện","Xã Long Hưng","Xã Thuận Hòa","Xã Mỹ Hương","Xã An Ninh","Xã Mỹ Phước","Xã An Thạnh","Xã Cù Lao Dung","Xã Long Phú","Xã Đại Ngãi","Xã Trường Khánh","Xã Tân Thạnh","Xã Trần Đề","Xã Liêu Tú","Xã Lịch Hội Thượng","Phường Mỹ Xuyên","Xã Tài Văn","Xã Thạnh Thới An","Xã Nhu Gia","Xã Hòa Tú","Xã Ngọc Tố","Xã Gia Hòa","Phường Ngã Năm","Xã Tân Long","Phường Mỹ Quới","Xã Phú Lộc","Xã Lâm Tân","Xã Vĩnh Lợi","Phường Vĩnh Châu","Phường Khánh Hòa","Xã Vĩnh Hải","Phường Vĩnh Phước","Xã Lai Hòa"],"Đồng Nai":["Phường Bình Phước","Phường Đồng Xoài","Phường Phước Long","Phường Phước Bình","Xã Bù Gia Mập","Xã Đăk Ơ","Xã Đa Kia","Xã Bình Tân","Xã Phú Riềng","Xã Long Hà","Xã Phú Trung","Xã Phú Nghĩa","Xã Lộc Ninh","Xã Lộc Tấn","Xã Lộc Thạnh","Xã Lộc Quang","Xã Lộc Thành","Xã Lộc Hưng","Xã Thiện Hưng","Xã Hưng Phước","Xã Tân Tiến","Phường Bình Long","Phường An Lộc","Xã Tân Hưng","Xã Minh Đức","Xã Tân Quan","Xã Tân Khai","Xã Đồng Phú","Xã Tân Lợi","Xã Thuận Lợi","Xã Đồng Tâm","Xã Bù Đăng","Xã Đak Nhau","Xã Thọ Sơn","Xã Bom Bo","Xã Nghĩa Trung","Xã Phước Sơn","Phường Chơn Thành","Phường Minh Hưng","Xã Nha Bích","Phường Trảng Dài","Phường Hố Nai","Phường Tam Hiệp","Phường Long Bình","Phường Trấn Biên","Phường Biên Hòa","Phường Long Khánh","Phường Bình Lộc","Phường Bảo Vinh","Phường Xuân Lập","Phường Hàng Gòn","Xã Tân Phú","Xã Đak Lua","Xã Nam Cát Tiên","Xã Tà Lài","Xã Phú Lâm","Xã Trị An","Xã Phú Lý","Xã Tân An","Phường Tân Triều","Xã Định Quán","Xã Thanh Sơn","Xã Phú Vinh","Xã Phú Hòa","Xã La Ngà","Xã Trảng Bom","Xã Bàu Hàm","Xã Bình Minh","Xã Hưng Thịnh","Xã An Viễn","Xã Thống Nhất","Xã Gia Kiệm","Xã Dầu Giây","Xã Xuân Quế","Xã Cẩm Mỹ","Xã Xuân Đường","Xã Xuân Đông","Xã Sông Ray","Xã Long Thành","Phường Tam Phước","Phường Phước Tân","Phường Long Hưng","Xã An Phước","Xã Bình An","Xã Long Phước","Xã Phước Thái","Xã Xuân Lộc","Xã Xuân Bắc","Xã Xuân Thành","Xã Xuân Hòa","Xã Xuân Phú","Xã Xuân Định","Xã Nhơn Trạch","Xã Đại Phước","Xã Phước An"],"Khánh Hòa":["Phường Bắc Nha Trang","Phường Nha Trang","Phường Tây Nha Trang","Phường Nam Nha Trang","Phường Bắc Cam Ranh","Phường Cam Ranh","Phường Ba Ngòi","Phường Cam Linh","Xã Cam Hiệp","Xã Cam Lâm","Xã Cam An","Xã Nam Cam Ranh","Xã Vạn Ninh","Xã Tu Bông","Xã Đại Lãnh","Xã Vạn Thắng","Xã Vạn Hưng","Phường Ninh Hòa","Xã Bắc Ninh Hòa","Xã Tây Ninh Hòa","Xã Hòa Trí","Phường Đông Ninh Hòa","Xã Tân Định","Phường Hòa Thắng","Xã Nam Ninh Hòa","Xã Khánh Vĩnh","Xã Trung Khánh Vĩnh","Xã Bắc Khánh Vĩnh","Xã Tây Khánh Vĩnh","Xã Nam Khánh Vĩnh","Xã Diên Khánh","Xã Diên Điền","Xã Diên Lâm","Xã Diên Thọ","Xã Diên Lạc","Xã Suối Hiệp","Xã Suối Dầu","Xã Khánh Sơn","Xã Tây Khánh Sơn","Xã Đông Khánh Sơn","Đặc khu Trường Sa","Phường Đô Vinh","Phường Bảo An","Phường Phan Rang","Phường Đông Hải","Xã Bác Ái Tây","Xã Bác Ái","Xã Bác Ái Đông","Xã Ninh Sơn","Xã Lâm Sơn","Xã Mỹ Sơn","Xã Anh Dũng","Phường Ninh Chử","Xã Công Hải","Xã Vĩnh Hải","Xã Thuận Bắc","Xã Ninh Hải","Xã Xuân Hải","Xã Ninh Phước","Xã Phước Hậu","Xã Phước Dinh","Xã Phước Hữu","Xã Thuận Nam","Xã Phước Hà","Xã Cà Ná"],"Nghệ An":["Phường Thành Vinh","Phường Trường Vinh","Phường Vinh Phú","Phường Vinh Lộc","Phường Cửa Lò","Xã Quế Phong","Xã Thông Thụ","Xã Tiền Phong","Xã Tri Lễ","Xã Mường Quàng","Xã Quỳ Châu","Xã Châu Tiến","Xã Hùng Chân","Xã Châu Bình","Xã Mường Xén","Xã Mỹ Lý","Xã Bắc Lý","Xã Keng Đu","Xã Huồi Tụ","Xã Mường Lống","Xã Na Loi","Xã Nậm Cắn","Xã Hữu Kiệm","Xã Chiêu Lưu","Xã Mường Típ","Xã Na Ngoi","Xã Tương Dương","Xã Nhôn Mai","Xã Hữu Khuông","Xã Nga My","Xã Lượng Minh","Xã Yên Hòa","Xã Yên Na","Xã Tam Quang","Xã Tam Thái","Phường Thái Hòa","Xã Nghĩa Đàn","Xã Nghĩa Lâm","Xã Nghĩa Thọ","Xã Nghĩa Hưng","Xã Nghĩa Mai","Phường Tây Hiếu","Xã Đông Hiếu","Xã Nghĩa Lộc","Xã Nghĩa Khánh","Xã Quỳ Hợp","Xã Châu Hồng","Xã Châu Lộc","Xã Tam Hợp","Xã Minh Hợp","Xã Mường Ham","Xã Mường Chọng","Phường Hoàng Mai","Phường Quỳnh Mai","Phường Tân Mai","Xã Quỳnh Văn","Xã Quỳnh Tam","Xã Quỳnh Sơn","Xã Quỳnh Anh","Xã Quỳnh Lưu","Xã Quỳnh Phú","Xã Quỳnh Thắng","Xã Bình Chuẩn","Xã Mậu Thạch","Xã Cam Phục","Xã Châu Khê","Xã Con Cuông","Xã Môn Sơn","Xã Tân Kỳ","Xã Tân Phú","Xã Giai Xuân","Xã Nghĩa Đồng","Xã Tiên Đồng","Xã Tân An","Xã Nghĩa Hành","Xã Anh Sơn","Xã Thành Bình Thọ","Xã Nhân Hòa","Xã Vĩnh Tường","Xã Anh Sơn Đông","Xã Yên Xuân","Xã Hùng Châu","Xã Đức Châu","Xã Hải Châu","Xã Quảng Châu","Xã Diễn Châu","Xã Minh Châu","Xã An Châu","Xã Tân Châu","Xã Yên Thành","Xã Bình Minh","Xã Quang Đồng","Xã Giai Lạc","Xã Đông Thành","Xã Vân Du","Xã Quan Thành","Xã Hợp Minh","Xã Vân Tụ","Xã Bạch Ngọc","Xã Lương Sơn","Xã Đô Lương","Xã Văn Hiến","Xã Thuần Trung","Xã Bạch Hà","Xã Đại Đồng","Xã Hạnh Lâm","Xã Cát Ngạn","Xã Tam Đồng","Xã Sơn Lâm","Xã Hoa Quân","Xã Xuân Lâm","Xã Kim Bảng","Xã Bích Hào","Xã Nghi Lộc","Xã Hải Lộc","Xã Thần Lĩnh","Xã Văn Kiều","Xã Phúc Lộc","Xã Trung Lộc","Xã Đông Lộc","Phường Vinh Hưng","Xã Nam Đàn","Xã Đại Huệ","Xã Vạn An","Xã Kim Liên","Xã Thiên Nhẫn","Xã Hưng Nguyên","Xã Yên Trung","Xã Hưng Nguyên Nam","Xã Lam Thành"],"Thanh Hóa":["Phường Hàm Rồng","Phường Hạc Thành","Phường Bỉm Sơn","Phường Quang Trung","Xã Mường Lát","Xã Tam Chung","Xã Mường Lý","Xã Trung Lý","Xã Quang Chiểu","Xã Pù Nhi","Xã Nhi Sơn","Xã Mường Chanh","Xã Hồi Xuân","Xã Trung Thành","Xã Trung Sơn","Xã Phú Lệ","Xã Phú Xuân","Xã Hiền Kiệt","Xã Nam Xuân","Xã Thiên Phủ","Xã Bá Thước","Xã Điền Quang","Xã Điền Lư","Xã Quý Lương","Xã Pù Luông","Xã Cổ Lũng","Xã Văn Nho","Xã Thiết Ống","Xã Trung Hạ","Xã Tam Thanh","Xã Sơn Thủy","Xã Na Mèo","Xã Quan Sơn","Xã Tam Lư","Xã Sơn Điện","Xã Mường Mìn","Xã Yên Khương","Xã Yên Thắng","Xã Giao An","Xã Văn Phú","Xã Linh Sơn","Xã Đồng Lương","Xã Ngọc Lặc","Xã Thạch Lập","Xã Ngọc Liên","Xã Nguyệt Ấn","Xã Kiên Thọ","Xã Minh Sơn","Xã Cẩm Thủy","Xã Cẩm Thạch","Xã Cẩm Tú","Xã Cẩm Vân","Xã Cẩm Tân","Xã Kim Tân","Xã Vân Du","Xã Thạch Quảng","Xã Thạch Bình","Xã Thành Vinh","Xã Ngọc Trạo","Xã Hà Trung","Xã Hà Long","Xã Hoạt Giang","Xã Lĩnh Toại","Xã Tống Sơn","Xã Vĩnh Lộc","Xã Tây Đô","Xã Biện Thượng","Xã Yên Phú","Xã Quý Lộc","Xã Yên Trường","Xã Yên Ninh","Xã Định Hòa","Xã Định Tân","Xã Yên Định","Xã Thọ Xuân","Xã Thọ Long","Xã Xuân Hòa","Xã Lam Sơn","Xã Sao Vàng","Xã Thọ Lập","Xã Xuân Tín","Xã Xuân Lập","Xã Bát Mọt","Xã Yên Nhân","Xã Vạn Xuân","Xã Lương Sơn","Xã Luận Thành","Xã Thắng Lộc","Xã Thường Xuân","Xã Xuân Chinh","Xã Tân Thành","Xã Triệu Sơn","Xã Thọ Bình","Xã Hợp Tiến","Xã Tân Ninh","Xã Đồng Tiến","Xã Thọ Ngọc","Xã Thọ Phú","Xã An Nông","Xã Thiệu Hóa","Xã Thiệu Tiến","Xã Thiệu Quang","Xã Thiệu Toán","Xã Thiệu Trung","Phường Đông Tiến","Xã Hoằng Hóa","Xã Hoằng Giang","Xã Hoằng Phú","Xã Hoằng Sơn","Phường Nguyệt Viên","Xã Hoằng Lộc","Xã Hoằng Châu","Xã Hoằng Tiến","Xã Hoằng Thanh","Xã Hậu Lộc","Xã Triệu Lộc","Xã Đông Thành","Xã Hoa Lộc","Xã Vạn Lộc","Xã Nga Sơn","Xã Tân Tiến","Xã Nga Thắng","Xã Hồ Vương","Xã Nga An","Xã Ba Đình","Xã Như Xuân","Xã Xuân Bình","Xã Hóa Quỳ","Xã Thanh Phong","Xã Thanh Quân","Xã Thượng Ninh","Xã Như Thanh","Xã Xuân Du","Xã Mậu Lâm","Xã Xuân Thái","Xã Yên Thọ","Xã Thanh Kỳ","Xã Nông Cống","Xã Trung Chính","Xã Thắng Lợi","Xã Thăng Bình","Xã Trường Văn","Xã Tượng Lĩnh","Xã Công Chính","Phường Đông Sơn","Phường Đông Quang","Xã Lưu Vệ","Xã Quảng Yên","Xã Quảng Chính","Xã Quảng Ngọc","Phường Nam Sầm Sơn","Phường Quảng Phú","Phường Sầm Sơn","Xã Quảng Ninh","Xã Quảng Bình","Xã Tiên Trang","Phường Tĩnh Gia","Phường Ngọc Sơn","Xã Các Sơn","Phường Tân Dân","Phường Hải Lĩnh","Phường Đào Duy Từ","Phường Trúc Lâm","Xã Trường Lâm","Phường Hải Bình","Phường Nghi Sơn"]};
+
+    var citySelect = document.getElementById('city');
+    var wardSelect = document.getElementById('district');
+
+    function populateWards(cityName) {
+        var wards = WARD_DATA[cityName];
+        wardSelect.innerHTML = '';
+
+        if (!wards || wards.length === 0) {
+            wardSelect.innerHTML = '<option value="" disabled selected>Không có dữ liệu phường/xã</option>';
+            wardSelect.disabled = true;
+            return;
+        }
+
+        var placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        placeholder.textContent = 'Chọn phường/xã (' + wards.length + ')';
+        wardSelect.appendChild(placeholder);
+
+        wards.forEach(function(w) {
+            var opt = document.createElement('option');
+            opt.value = w;
+            opt.textContent = w;
+            wardSelect.appendChild(opt);
+        });
+
+        wardSelect.disabled = false;
+    }
+
+    if (citySelect && wardSelect) {
+        citySelect.addEventListener('change', function() {
+            populateWards(this.value);
+        });
+    }
+
+    lucide.createIcons();
+})();
+</script>
+</body>
+</html>
