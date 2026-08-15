@@ -1,6 +1,6 @@
 /* ============================================================
    responsive.css — Breakpoints & Responsive Overrides
-   Justplay Sportswear E-commerce
+   Victor Sport E-commerce
 
    Breakpoints:
    - xs:  < 480px   (mobile nhỏ)
@@ -76,6 +76,14 @@
     }
 
     /* Header */
+    :root {
+        --header-height: 72px;
+    }
+
+    .logo-img {
+        height: 52px;
+    }
+
     .main-nav,
     .search-form {
         display: none;
@@ -202,6 +210,31 @@
         position: static;
         order: -1;
         margin-bottom: var(--space-lg);
+    }
+
+    /* Checkout */
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary {
+        position: static;
+        order: -1;
+        margin-bottom: var(--space-lg);
+    }
+
+    .checkout-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Order success */
+    .success-card {
+        padding: var(--space-xl) var(--space-lg);
+    }
+
+    .success-actions {
+        flex-direction: column;
+        align-items: stretch;
     }
 
     /* Auth */

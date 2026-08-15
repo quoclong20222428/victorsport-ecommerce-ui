@@ -1,6 +1,6 @@
 /**
  * main.js — Shared interactive behaviors
- * Justplay Sportswear E-commerce
+ * Victor Sport E-commerce
  */
 
 'use strict';

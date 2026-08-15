@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thanh toán — Justplay Sportswear. Hoàn tất thông tin giao hàng và xác nhận đơn hàng của bạn.">
-    <title>Thanh toán | Justplay Sportswear</title>
+    <meta name="description" content="Thanh toán — Victor Sport. Hoàn tất thông tin giao hàng và xác nhận đơn hàng của bạn.">
+    <title>Thanh toán | Victor Sport</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,56 +15,14 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <style>
-.checkout-breadcrumb{display:flex;align-items:center;gap:var(--space-xs);font-size:var(--font-size-body-sm);color:var(--color-muted);margin-bottom:var(--space-xl);flex-wrap:wrap}
-.checkout-breadcrumb a{color:var(--color-muted);text-decoration:none}
-.checkout-breadcrumb a:hover{color:var(--color-primary)}
-.crumb-active{color:var(--color-text);font-weight:var(--font-weight-semibold)}
-.checkout-layout{display:grid;grid-template-columns:1fr 380px;gap:var(--space-xl);align-items:start}
-.checkout-panel{background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-xl)}
-.checkout-panel+.checkout-panel{margin-top:var(--space-lg)}
-.section-title{font-size:var(--font-size-h4);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--color-border);display:flex;align-items:center;gap:var(--space-xs)}
-.section-title .lucide{width:20px;height:20px;color:var(--color-primary)}
-.form-group{margin-bottom:var(--space-md)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
-.form-label{display:block;font-size:var(--font-size-body-sm);font-weight:var(--font-weight-medium);margin-bottom:var(--space-xs);color:var(--color-text)}
-.req{color:var(--color-primary)}
-.form-input,.form-select{width:100%;padding:var(--space-sm) var(--space-md);border:1.5px solid var(--color-border);border-radius:var(--radius-sm);font-size:var(--font-size-body);font-family:var(--font-family);background:var(--color-white);color:var(--color-text);transition:border-color var(--transition-fast),box-shadow var(--transition-fast)}
-.form-input:focus,.form-select:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(212,32,39,.12)}
-.form-input.is-error,.form-select.is-error{border-color:var(--color-error)}
-.form-error-msg{font-size:var(--font-size-caption);color:var(--color-error);margin-top:var(--space-2xs);display:none}
-.form-input.is-error~.form-error-msg,.form-select.is-error~.form-error-msg{display:block}
-.method-options{display:flex;flex-direction:column;gap:var(--space-sm)}
-.method-option{display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);border:1.5px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;transition:border-color var(--transition-fast),background var(--transition-fast)}
-.method-option:hover,.method-option:has(input:checked){border-color:var(--color-primary);background:rgba(212,32,39,.04)}
-.method-option input[type=radio]{accent-color:var(--color-primary);width:18px;height:18px;flex-shrink:0}
-.method-name{font-weight:var(--font-weight-semibold);font-size:var(--font-size-body-sm)}
-.method-desc{font-size:var(--font-size-caption);color:var(--color-muted)}
-.method-price{margin-left:auto;font-weight:var(--font-weight-semibold);font-size:var(--font-size-body-sm);white-space:nowrap}
-.checkout-summary{background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-xl);position:sticky;top:calc(var(--header-height) + var(--space-md))}
-.cs-title{font-size:var(--font-size-body);font-weight:var(--font-weight-semibold);margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--color-border)}
-.co-item{display:flex;gap:var(--space-sm);align-items:center;margin-bottom:var(--space-sm)}
-.co-img{width:56px;height:70px;object-fit:cover;border-radius:var(--radius-sm);background:var(--color-surface);flex-shrink:0}
-.co-info{flex:1;min-width:0}
-.co-name{font-size:var(--font-size-body-sm);font-weight:var(--font-weight-medium);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.co-variant{font-size:var(--font-size-caption);color:var(--color-muted)}
-.co-price{font-size:var(--font-size-body-sm);font-weight:var(--font-weight-semibold);white-space:nowrap}
-.s-divider{border:none;border-top:1px solid var(--color-border);margin-block:var(--space-md)}
-.s-row{display:flex;justify-content:space-between;align-items:center;font-size:var(--font-size-body-sm);margin-bottom:var(--space-xs);color:var(--color-text-secondary)}
-.s-row--total{font-size:var(--font-size-body);font-weight:var(--font-weight-bold);color:var(--color-text);margin-top:var(--space-sm)}
-.s-free{color:var(--color-success);font-weight:var(--font-weight-medium)}
-.cs-trust{margin-top:var(--space-md);display:flex;flex-direction:column;gap:var(--space-xs);font-size:var(--font-size-caption);color:var(--color-muted)}
-.cs-trust p{display:flex;align-items:center;gap:var(--space-xs)}
-.cs-trust .lucide{width:14px;height:14px;flex-shrink:0}
-@media(max-width:768px){.checkout-layout{grid-template-columns:1fr}.checkout-summary{position:static;order:-1}.form-row{grid-template-columns:1fr}}
-    </style>
+
 </head>
 <body>
 <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
 <div class="announcement-bar" role="banner"><div class="container"><p>MIỄN PHÍ VẬN CHUYỂN CHO ĐƠN HÀNG TRÊN 500.000₫</p></div></div>
 <header class="site-header">
     <div class="container"><div class="header-inner">
-        <a href="index.html" class="logo" aria-label="Justplay Sportswear — Trang chủ"><img src="images/logo_brand.png" alt="Justplay" class="logo-img"></a>
+        <a href="index.html" class="logo" aria-label="Victor Sport — Trang chủ"><img src="images/logo_brand.png" alt="Victor Sport" class="logo-img"></a>
         <nav class="main-nav" aria-label="Điều hướng chính"><ul class="nav-list">
             <li class="nav-item"><a href="products.html?category=nam" class="nav-link">Nam</a></li>
             <li class="nav-item"><a href="products.html?category=nu" class="nav-link">Nữ</a></li>
@@ -77,7 +35,7 @@
                 <button type="submit" class="search-btn" aria-label="Tìm kiếm"><i data-lucide="search" aria-hidden="true"></i></button>
             </form>
             <a href="login.html" class="header-icon" aria-label="Tài khoản"><i data-lucide="user" aria-hidden="true"></i></a>
-            <a href="cart.html" class="header-icon cart-icon" aria-label="Giỏ hàng"><i data-lucide="shopping-cart" aria-hidden="true"></i><span class="cart-count" aria-live="polite" style="display:none">0</span></a>
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Giỏ hàng"><i data-lucide="shopping-cart" aria-hidden="true"></i><span class="cart-count" aria-live="polite">0</span></a>
         </div>
         <button class="mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" aria-hidden="true"></i></button>
     </div></div>
@@ -92,22 +50,22 @@
 </header>
 
 <main id="main-content">
-<div class="container" style="padding-top:var(--space-xl);padding-bottom:var(--space-3xl)">
+<div class="container checkout-page-content">
 
     <nav class="checkout-breadcrumb" aria-label="Quy trình thanh toán">
         <a href="cart.html">Giỏ hàng</a>
-        <span aria-hidden="true"><i data-lucide="chevron-right" style="width:14px;height:14px"></i></span>
-        <span class="crumb-active" aria-current="step">Thanh toán</span>
-        <span aria-hidden="true"><i data-lucide="chevron-right" style="width:14px;height:14px"></i></span>
-        <span style="color:var(--color-muted)">Xác nhận</span>
+        <span class="checkout-breadcrumb__separator" aria-hidden="true"><i data-lucide="chevron-right" class="lucide--sm"></i></span>
+        <span class="checkout-breadcrumb__active" aria-current="step">Thanh toán</span>
+        <span class="checkout-breadcrumb__separator" aria-hidden="true"><i data-lucide="chevron-right" class="lucide--sm"></i></span>
+        <span class="checkout-breadcrumb">Xác nhận</span>
     </nav>
 
-    <h1 class="page-title" style="margin-bottom:var(--space-xl)">Thanh toán</h1>
+    <h1 class="page-title">Thanh toán</h1>
 
-    <div id="checkout-empty-guard" hidden style="text-align:center;padding:var(--space-4xl) var(--space-lg)">
-        <i data-lucide="shopping-cart" style="width:56px;height:56px;color:var(--color-border);margin:0 auto var(--space-lg);display:block" aria-hidden="true"></i>
-        <h2 style="font-size:var(--font-size-h3);margin-bottom:var(--space-sm)">Giỏ hàng đang trống</h2>
-        <p style="color:var(--color-text-secondary);margin-bottom:var(--space-xl)">Bạn chưa có sản phẩm nào trong giỏ hàng.</p>
+    <div id="checkout-empty-guard" class="empty-state" hidden>
+        <span class="empty-state__icon" aria-hidden="true"><i data-lucide="shopping-cart"></i></span>
+        <h2 class="empty-state__title">Giỏ hàng đang trống</h2>
+        <p class="empty-state__desc">Bạn chưa có sản phẩm nào trong giỏ hàng.</p>
         <a href="products.html" class="btn btn--primary">Mua sắm ngay</a>
     </div>
 
@@ -119,32 +77,32 @@
 
             <!-- 1. Thông tin giao hàng -->
             <div class="checkout-panel">
-                <h2 class="section-title"><i data-lucide="map-pin" aria-hidden="true"></i> Thông tin giao hàng</h2>
-                <div class="form-row">
+                <h2 class="checkout-panel__title"><i data-lucide="map-pin" aria-hidden="true"></i> Thông tin giao hàng</h2>
+                <div class="checkout-form-row">
                     <div class="form-group">
-                        <label class="form-label" for="full-name">Họ và tên <span class="req">*</span></label>
+                        <label class="form-label" for="full-name">Họ và tên <span class="form-label__required">*</span></label>
                         <input type="text" id="full-name" name="fullName" class="form-input" placeholder="Nguyễn Văn A" autocomplete="name" required>
                         <span class="form-error-msg">Vui lòng nhập họ và tên.</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="phone">Số điện thoại <span class="req">*</span></label>
+                        <label class="form-label" for="phone">Số điện thoại <span class="form-label__required">*</span></label>
                         <input type="tel" id="phone" name="phone" class="form-input" placeholder="0901 234 567" autocomplete="tel" required>
                         <span class="form-error-msg">Vui lòng nhập số điện thoại hợp lệ.</span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="email">Email <span class="req">*</span></label>
+                    <label class="form-label" for="email">Email <span class="form-label__required">*</span></label>
                     <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" autocomplete="email" required>
                     <span class="form-error-msg">Vui lòng nhập địa chỉ email hợp lệ.</span>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="address">Địa chỉ giao hàng <span class="req">*</span></label>
+                    <label class="form-label" for="address">Địa chỉ giao hàng <span class="form-label__required">*</span></label>
                     <input type="text" id="address" name="address" class="form-input" placeholder="Số nhà, tên đường, khu phố" autocomplete="street-address" required>
                     <span class="form-error-msg">Vui lòng nhập địa chỉ giao hàng.</span>
                 </div>
-                <div class="form-row">
+                <div class="checkout-form-row">
                     <div class="form-group">
-                        <label class="form-label" for="city">Tỉnh/Thành phố <span class="req">*</span></label>
+                        <label class="form-label" for="city">Tỉnh/Thành phố <span class="form-label__required">*</span></label>
                         <select id="city" name="city" class="form-select" required>
                             <option value="" disabled selected>Chọn tỉnh/thành</option>
                             <option>Hà Nội</option>
@@ -163,7 +121,7 @@
                         <span class="form-error-msg">Vui lòng chọn tỉnh/thành phố.</span>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="district">Phường/Xã <span class="req">*</span></label>
+                        <label class="form-label" for="district">Phường/Xã <span class="form-label__required">*</span></label>
                         <select id="district" name="district" class="form-select" required disabled>
                             <option value="" disabled selected>Chọn tỉnh/thành trước</option>
                         </select>
@@ -172,13 +130,13 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="note">Ghi chú đơn hàng</label>
-                    <textarea id="note" name="note" class="form-input" rows="2" placeholder="Ghi chú thêm cho người giao hàng (không bắt buộc)..." style="resize:vertical"></textarea>
+                    <textarea id="note" name="note" class="form-input" rows="2" placeholder="Ghi chú thêm cho người giao hàng (không bắt buộc)..."></textarea>
                 </div>
             </div>
 
             <!-- 2. Phương thức vận chuyển -->
             <div class="checkout-panel">
-                <h2 class="section-title"><i data-lucide="truck" aria-hidden="true"></i> Phương thức vận chuyển</h2>
+                <h2 class="checkout-panel__title"><i data-lucide="truck" aria-hidden="true"></i> Phương thức vận chuyển</h2>
                 <div class="method-options">
                     <label class="method-option">
                         <input type="radio" name="shipping" value="standard" checked>
@@ -201,7 +159,7 @@
 
             <!-- 3. Phương thức thanh toán -->
             <div class="checkout-panel">
-                <h2 class="section-title"><i data-lucide="credit-card" aria-hidden="true"></i> Phương thức thanh toán</h2>
+                <h2 class="checkout-panel__title"><i data-lucide="credit-card" aria-hidden="true"></i> Phương thức thanh toán</h2>
                 <div class="method-options">
                     <label class="method-option">
                         <input type="radio" name="payment" value="cod" checked>
@@ -232,26 +190,26 @@
 
         <!-- TÓM TẮT ĐƠN HÀNG -->
         <aside class="checkout-summary" aria-label="Tóm tắt đơn hàng">
-            <h2 class="cs-title">Đơn hàng của bạn</h2>
+            <h2 class="checkout-summary__title">Đơn hàng của bạn</h2>
             <div id="checkout-item-list"></div>
-            <hr class="s-divider">
-            <div class="s-row"><span>Tạm tính</span><span id="co-subtotal">—</span></div>
-            <div class="s-row"><span>Phí vận chuyển</span><span id="co-shipping" class="s-free">Miễn phí</span></div>
-            <hr class="s-divider">
-            <div class="s-row s-row--total"><span>Tổng cộng</span><span id="co-total" style="color:var(--color-primary)">—</span></div>
+            <hr class="summary-divider">
+            <div class="summary-row"><span>Tạm tính</span><span id="co-subtotal">—</span></div>
+            <div class="summary-row"><span>Phí vận chuyển</span><span id="co-shipping" class="summary-free">Miễn phí</span></div>
+            <hr class="summary-divider">
+            <div class="summary-row summary-row--total"><span>Tổng cộng</span><span id="co-total" class="summary-row__total-amount">—</span></div>
 
-            <div style="margin-top:var(--space-lg)">
-                <button type="button" id="confirm-order-btn" class="btn btn--primary btn--full" style="gap:var(--space-xs);display:flex;align-items:center;justify-content:center">
+            <div class="checkout-actions">
+                <button type="button" id="confirm-order-btn" class="btn btn--primary btn--full">
                     <i data-lucide="check-circle" aria-hidden="true"></i>
                     Xác nhận đặt hàng
                 </button>
-                <a href="cart.html" class="btn btn--ghost btn--full" style="margin-top:var(--space-sm);display:flex;align-items:center;justify-content:center;gap:var(--space-xs)">
+                <a href="cart.html" class="btn btn--ghost btn--full">
                     <i data-lucide="arrow-left" aria-hidden="true"></i>
                     Quay lại giỏ hàng
                 </a>
             </div>
 
-            <div class="cs-trust">
+            <div class="checkout-trust">
                 <p><i data-lucide="shield-check"></i> Thanh toán an toàn &amp; bảo mật</p>
                 <p><i data-lucide="rotate-ccw"></i> Đổi trả miễn phí trong 30 ngày</p>
                 <p><i data-lucide="truck"></i> Miễn phí vận chuyển đơn trên 500.000₫</p>
@@ -270,7 +228,7 @@
             <div class="footer-col"><h3 class="footer-heading">Cửa hàng</h3><ul class="footer-links"><li><a href="products.html?category=nam">Nam</a></li><li><a href="products.html?category=nu">Nữ</a></li></ul></div>
             <div class="footer-col"><h3 class="footer-heading">Theo dõi</h3><ul class="footer-links"><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li></ul></div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 Justplay Sportswear. All rights reserved.</p></div>
+        <div class="footer-bottom"><p>&copy; 2026 Victor Sport. All rights reserved.</p></div>
     </div>
 </footer>
 
@@ -303,14 +261,14 @@
     items.forEach(function(item) {
         subtotal += item.price * item.qty;
         var d = document.createElement('div');
-        d.className = 'co-item';
+        d.className = 'checkout-item';
         d.innerHTML =
-            '<img class="co-img" src="' + (item.image || 'https://placehold.co/56x70/EEEEEE/333333?text=SP') + '" alt="' + item.name + '">' +
-            '<div class="co-info">' +
-            '  <div class="co-name">' + item.name + '</div>' +
-            '  <div class="co-variant">Size: ' + item.size + ' | Màu: ' + (item.colorLabel || item.color) + ' | SL: ' + item.qty + '</div>' +
+            '<img class="checkout-item__img" src="' + (item.image || 'https://placehold.co/56x70/EEEEEE/333333?text=SP') + '" alt="' + item.name + '">' +
+            '<div class="checkout-item__info">' +
+            '  <div class="checkout-item__name">' + item.name + '</div>' +
+            '  <div class="checkout-item__variant">Size: ' + item.size + ' | Màu: ' + (item.colorLabel || item.color) + ' | SL: ' + item.qty + '</div>' +
             '</div>' +
-            '<span class="co-price">' + (item.price * item.qty).toLocaleString('vi-VN') + '₫</span>';
+            '<span class="checkout-item__price">' + (item.price * item.qty).toLocaleString('vi-VN') + '₫</span>';
         listEl.appendChild(d);
     });
 
@@ -320,7 +278,7 @@
         subtotalEl.textContent = fmt(subtotal);
         if (shippingCost === 0) {
             shippingEl.textContent = 'Miễn phí';
-            shippingEl.className = 's-free';
+            shippingEl.className = 'summary-free';
         } else {
             shippingEl.textContent = fmt(shippingCost);
             shippingEl.className = '';

@@ -1,6 +1,6 @@
 /* ============================================================
    reset.css — Normalize browser defaults
-   Justplay Sportswear E-commerce
+   Victor Sport E-commerce
    ============================================================ */
 
 /* Box sizing */
@@ -18,9 +18,9 @@
 
 /* Body defaults */
 body {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-normal);
     color: var(--color-text);
     background-color: var(--color-white);
     -webkit-font-smoothing: antialiased;
