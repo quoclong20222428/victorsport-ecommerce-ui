@@ -1,6 +1,6 @@
-# Justplay Sportswear - E-Commerce Website
+# Victor Sport - E-Commerce Website
 
-A modern, high-performance, and responsive e-commerce web interface built for **Justplay Sportswear**, an athletic apparel and sportswear brand.
+A modern, high-performance, and responsive e-commerce web interface built for **Victor Sport**, an athletic apparel and sportswear brand.
 
 ---
 
