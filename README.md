@@ -8,32 +8,32 @@ The project runs entirely in the browser. No packages, build step, backend servi
 
 ### Home page
 
-![Victor Sport home page](images/home-page.png)
+![Victor Sport home page](./images/home-page.png)
 
 ### Product catalogue
 
-![Victor Sport product catalogue](images/product-list-page.png)
+![Victor Sport product catalogue](./images/product-list-page.png)
 
 ### Shopping cart
 
-![Victor Sport shopping cart](images/card-page.png)
+![Victor Sport shopping cart](./images/card-page.png)
 
 ### Checkout
 
-![Victor Sport checkout page](images/payment-page.png)
+![Victor Sport checkout page](./images/payment-page.png)
 
 ## Implemented pages
 
-| Page | Description |
-| --- | --- |
-| `index.html` | Home page with a hero carousel, sport categories, featured products, promotion banner, and newsletter section. |
-| `products.html` | Product catalogue with filter, sort, wishlist, and pagination interfaces. |
+| Page                  | Description                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `index.html`          | Home page with a hero carousel, sport categories, featured products, promotion banner, and newsletter section.                |
+| `products.html`       | Product catalogue with filter, sort, wishlist, and pagination interfaces.                                                     |
 | `product-detail.html` | Product details, image gallery, colour and size selection, quantity selector, product information tabs, and related products. |
-| `cart.html` | Dynamic cart that reads local data, updates quantities, removes items, and recalculates totals. |
-| `checkout.html` | Delivery form, shipping and payment options, validation, and simulated order confirmation. |
-| `order-success.html` | Confirmation screen showing the generated order ID, delivery information, and an order summary. |
-| `sport.html` | A sports-category landing page, currently illustrated with Pickleball content. |
-| `login.html` | Login and sign-up interface with tab switching and password visibility controls. |
+| `cart.html`           | Dynamic cart that reads local data, updates quantities, removes items, and recalculates totals.                               |
+| `checkout.html`       | Delivery form, shipping and payment options, validation, and simulated order confirmation.                                    |
+| `order-success.html`  | Confirmation screen showing the generated order ID, delivery information, and an order summary.                               |
+| `sport.html`          | A sports-category landing page, currently illustrated with Pickleball content.                                                |
+| `login.html`          | Login and sign-up interface with tab switching and password visibility controls.                                              |
 
 ## Implemented interactions
 
